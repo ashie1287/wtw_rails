@@ -1,0 +1,64 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  background-color: #272A84;
+}
+
+ul, li, p, h1 { padding: 0px; margin: 0px }
+
+#content {
+  position: absolute;
+  background-color: #797BCC;
+  display: block;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+
+#header {
+  height: 100px;
+  width: 978px;
+  margin: auto;
+  background-image:url('/images/newbanner.png');
+}
+
+#menu, #welcome, #upcoming {
+  background-color: #B2B4E5;
+  /*padding: 5px;*/
+  border-radius: 15px;
+}
+
+#welcome {
+  margin-bottom: 10px;
+}
+
+/*
+.leftside {
+  margin-left: 30px !important;
+}
+
+.rightside {
+  margin-right: 30px !important;
+}
+*/
+#menu {
+  text-align: center;
+}
+
+#menu ul {
+  margin: auto;
+  list-style: none;
+  width: 80%;
+}
+
+#menu ul li {
+  margin: 5px 0px;
+  border-radius: 5px;
+  background-color: #D9DAF6;
+  border: 1px solid white;
+}
+
+#footer {
+  border-top: 5px dashed red;
+  text-align: center;
+}
