@@ -1,6 +1,23 @@
 body {
   height: 100%;
   background-color: #272A84;
+  font-family: "lucida grande",verdana,helvetica,arial,sans-serif;
+  color: #333;
+}
+
+h1 {
+  font-family: 'Gill Sans','lucida grande',helvetica, arial, sans-serif;
+  font-size: 1.5em;
+  color: #EE3322;
+  padding: 0px 0px 0.313em 0px;
+}
+
+p {
+  text-indent: 1.875em;
+}
+
+.center {
+  text-align: center;
 }
 
 #content {
@@ -16,6 +33,7 @@ body {
 }
 
 #menu, #welcome, #upcoming {
+  -moz-border-radius: 1em;
   border-radius: 1em;
 }
 
@@ -29,17 +47,17 @@ body {
   margin: 1em 0px 0px 1.875em;
   padding: 0.313em;
   background-color: #B2B4E5;
-  text-align: center;
 }
 
 #menu ul {
   margin: auto;
   list-style: none;
-  width: 80%;
+  width: 90%;
 }
 
 #menu ul li {
   margin: 0.313em 0px;
+  -moz-border-radius: 1em;
   border-radius: 0.313em;
   background-color: #D9DAF6;
   border: 1px solid white;
@@ -53,10 +71,11 @@ body {
 #menu ul li a:visited, 
 #menu ul li a:active, 
 #menu ul li a:hover {
-  text-decoration: none !important;
+  text-decoration: none;
+  color: #000;
 }
 
 #footer {
   border-top: 1px dotted #272A84;
-  text-align: center;
+  color: #000;
 }

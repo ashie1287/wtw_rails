@@ -16,24 +16,16 @@
   <div id="content">
     <div class="row">
       <div class="col2">
-        <div id="menu">
-          <ul>
-            <li>Home</li>
-            <li>Causes</li>
-            <li>Fundraising</li>
-            <li>Sponsors</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
-        </div>
+        <%= render_menu %>
       </div>
       <div class="col10">
       <%= yield %>
+      </div>
       <div class="row-end">&nbsp;</div>
     </div>
     <div class="row">
       <div class="col12">
-        <div id="footer">
+        <div id="footer" class="center">
           <span>Copyright Walk The Walk &copy; 2011</span>
           <br />
           <span>All Rights Reserved.</span>
