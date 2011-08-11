@@ -2,44 +2,45 @@
 <html>
 <head>
   <title>Walk The Walk</title>
-  <%= stylesheet_link_tag '978', 'style' %>
+  <%= stylesheet_link_tag 'reset', '978', 'style' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 <div class="layout-978">
-  <div class="row" id="header">
+  <div class="row">
+    <div class="col12">
+      <div id="header"></div>
+    </div>
     <div class="row-end">&nbsp;</div>
   </div>
   <div id="content">
     <div class="row">
-      <div class="leftside col2" id="menu">
-        <ul>
-          <li>Home</li>
-          <li>Causes</li>
-          <li>Fundraising</li>
-          <li>Sponsors</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
+      <div class="col2">
+        <div id="menu">
+          <ul>
+            <li>Home</li>
+            <li>Causes</li>
+            <li>Fundraising</li>
+            <li>Sponsors</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </div>
       </div>
       <div class="col10">
-        <div class="rightside row" id="welcome">
-          <h1>Welcome!</h1>
-          <p>Walk the Walk is a non profit organization that pursues various charitable endeavors throughout the New Jersey area.  All of our proceeds go directly to local charities or Walk the Walk organized charitable events.  Our goal is to raise money and organize social events that help local New Jersey communities.</p>
-          <p>Walk the Walk is a non profit organization that pursues various charitable endeavors throughout the New Jersey area.  All of our proceeds go directly to local charities or Walk the Walk organized charitable events.  Our goal is to raise money and organize social events that help local New Jersey communities.</p>
-          <p>Walk the Walk is a non profit organization that pursues various charitable endeavors throughout the New Jersey area.  All of our proceeds go directly to local charities or Walk the Walk organized charitable events.  Our goal is to raise money and organize social events that help local New Jersey communities.</p>
-        <div class="row-end">&nbsp;</div>
-      </div>
-      <div class="rightside row" id="upcoming">
-        <h1>Upcoming Events</h1>
-        <div class="row-end">&nbsp;</div >
+      <%= yield %>
+      <div class="row-end">&nbsp;</div>
+    </div>
+    <div class="row">
+      <div class="col12">
+        <div id="footer">
+          <span>Copyright Walk The Walk &copy; 2011</span>
+          <br />
+          <span>All Rights Reserved.</span>
+        </div>
       </div>
       <div class="row-end">&nbsp;</div>
     </div>
-      <%= yield %>
-      <div class="row" id="footer">
-        <h1>Footer</h1>
-      </div>
   </div>
 </div>
 </body>
