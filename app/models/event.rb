@@ -3,6 +3,8 @@ class Event < ActiveRecord::Base
   validates_uniqueness_of :name, 
                             :case_sensitive => false,
                             :scope => [:start_time, :end_time]
+
+  validate :start_must_be_in_the_future
   validate :end_is_after_start
 
   has_many :user_events
@@ -13,11 +15,25 @@ class Event < ActiveRecord::Base
 
   has_many :teams
 
+  before_save :set_image_data
+
   private
 
+  def set_image_data
+    if self.image.is_a?(ActionDispatch::Http::UploadedFile)
+      self.image = self.image.tempfile.read
+    end
+  end
+
   def end_is_after_start
-    if start_time && end_time && start_time > end_time
-      errors.add_to_base("Start Time must be before End Time")
+    if self.start_time && self.end_time && self.start_time > self.end_time
+      self.errors.add(:base, "Start Time must be before End Time")
+    end
+  end
+
+  def start_must_be_in_the_future
+    if self.start_time && self.start_time < Time.zone.now
+      self.errors.add(:base, "Start Time must be in the future")
     end
   end
 end

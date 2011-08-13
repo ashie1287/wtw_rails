@@ -2,7 +2,7 @@
 <%= stylesheet_link_tag    'anytime' %>
 <%= javascript_include_tag 'anytime' %>
 
-<%= form_for(@event) do |f| %>
+<%= form_for(@event, :html => {:multipart => true}) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -16,8 +16,11 @@
   <% end %>
 
   <div class="field">
+    <% unless @event.new_record? %>
+      <%= image_tag event_image_path(@event) %>
+    <% end %>
     <%= f.label :image %><br />
-    <%= f.text_field :image %>
+    <%= f.file_field :image %>
   </div>
   <div class="field">
     <%= f.label :name %><br />

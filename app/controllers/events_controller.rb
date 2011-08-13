@@ -58,6 +58,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
 
+
     respond_to do |format|
       if @event.update_attributes(params[:event])
         format.html { redirect_to(@event, :notice => 'Event was successfully updated.') }
@@ -83,6 +84,11 @@ class EventsController < ApplicationController
 
   def image 
     @event = Event.find(params[:id])
-    send_data(@event.image)
+
+    if @event.image.blank?
+      send_file(File.join(Rails.root, 'public', 'images', 'noimage.gif'), :type => 'image/gif')
+    else
+      send_data(@event.image)
+    end
   end
 end
