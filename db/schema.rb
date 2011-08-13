@@ -10,6 +10,47 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20110813053236) do
+
+  create_table "events", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "location"
+    t.date     "start_time"
+    t.date     "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teams", :force => true do |t|
+    t.string   "name",       :null => false
+    t.integer  "event_id",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_events", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.integer  "event_id",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_events", ["user_id", "event_id"], :name => "index_user_events_on_user_id_and_event_id", :unique => true
+
+  create_table "user_teams", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.integer  "team_id",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_teams", ["user_id", "team_id"], :name => "index_user_teams_on_user_id_and_team_id", :unique => true
+
+  create_table "users", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "email",      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
