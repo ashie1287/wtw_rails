@@ -3,11 +3,11 @@
 one:
   name: MyString
   location: MyString
-  start_time: 2011-08-13
-  end_time: 2011-08-13
+  start_time: 2011-08-13 03:46:43
+  end_time: 2011-08-13 03:46:43
 
 two:
   name: MyString
   location: MyString
-  start_time: 2011-08-13
-  end_time: 2011-08-13
+  start_time: 2011-08-13 03:46:43
+  end_time: 2011-08-13 03:46:43
