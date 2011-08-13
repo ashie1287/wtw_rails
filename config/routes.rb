@@ -1,4 +1,5 @@
 WalkTheWalk::Application.routes.draw do
+  match 'events/:id/image' => 'events#image', :as => 'event_image'
   resources :events
 
   # The priority is based upon order of creation:

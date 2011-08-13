@@ -1,0 +1,11 @@
+<div id="upcoming">
+  <h1>Upcoming Events</h1>
+  <% @events.each do |event| %>
+    <div class="event">
+      <%= image_tag event_image_path(event), :class => 'event-image' %>
+      <span class='event-name'>Name: <%= event.name %></span>
+      <span class='event-location'>Location: <%= event.location %></span>
+      <% event_times(event) %>
+    </div>
+  <% end %>
+</div>

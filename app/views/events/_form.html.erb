@@ -1,3 +1,7 @@
+<%= stylesheet_link_tag    'scaffold' %>
+<%= stylesheet_link_tag    'anytime' %>
+<%= javascript_include_tag 'anytime' %>
+
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
@@ -12,6 +16,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :image %><br />
+    <%= f.text_field :image %>
+  </div>
+  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
@@ -21,13 +29,18 @@
   </div>
   <div class="field">
     <%= f.label :start_time %><br />
-    <%= f.datetime_select :start_time %>
+    <%= f.text_field :start_time, :value => @event.start_time.to_s %>
   </div>
   <div class="field">
     <%= f.label :end_time %><br />
-    <%= f.datetime_select :end_time %>
+    <%= f.text_field :end_time, :value => @event.end_time.to_s %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<%= javascript_tag do -%>
+  AnyTime.picker("event_start_time", { format: "%M %d, %Y %I:%i %p"} );
+  AnyTime.picker("event_end_time",   { format: "%M %d, %Y %I:%i %p"} );
+<% end -%>

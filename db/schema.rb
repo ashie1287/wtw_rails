@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(:version => 20110813053236) do
 
   create_table "events", :force => true do |t|
+    t.binary   "image"
     t.string   "name",       :null => false
     t.string   "location"
     t.datetime "start_time"

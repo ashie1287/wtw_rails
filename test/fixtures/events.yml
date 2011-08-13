@@ -1,13 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  image: 
   name: MyString
   location: MyString
-  start_time: 2011-08-13 03:46:43
-  end_time: 2011-08-13 03:46:43
+  start_time: 2011-08-13 13:34:27
+  end_time: 2011-08-13 13:34:27
 
 two:
+  image: 
   name: MyString
   location: MyString
-  start_time: 2011-08-13 03:46:43
-  end_time: 2011-08-13 03:46:43
+  start_time: 2011-08-13 13:34:27
+  end_time: 2011-08-13 13:34:27

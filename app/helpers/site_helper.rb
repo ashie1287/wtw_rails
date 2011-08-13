@@ -18,4 +18,16 @@ module SiteHelper
 
     render(:partial => 'site/menu', :locals => {:menu_items => menu_hash})
   end
+
+  def render_last_events
+    render(:partial => 'site/events')
+  end
+
+  def event_times(event)
+    concat(content_tag(:span, "Start Time: #{event.start_time}", :class => 'event-start')) if event.start_time
+    if event.start_time && event.end_time
+      concat(content_tag(:span, "End Time: #{event.end_time}", :class => 'event-end'))
+      concat(content_tag(:span, "Duration: #{distance_of_time_in_words(event.start_time, event.end_time)}", :class => 'event-duration'))
+    end
+  end
 end

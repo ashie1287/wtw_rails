@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Image:</b>
+  <%= image_tag event_image_path(@event) %>
+</p>
+
+<p>
   <b>Name:</b>
   <%= @event.name %>
 </p>

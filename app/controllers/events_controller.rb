@@ -80,4 +80,9 @@ class EventsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def image 
+    @event = Event.find(params[:id])
+    send_data(@event.image)
+  end
 end
