@@ -1,11 +1,36 @@
-<div id="upcoming">
+<div id='upcoming' class='rounded-blurb spaced-blurb'>
   <h1>Upcoming Events</h1>
   <% @events.each do |event| %>
-    <div class="event">
-      <%= image_tag event_image_path(event), :class => 'event-image' %>
-      <span class='event-name'>Name: <%= event.name %></span>
-      <span class='event-location'>Location: <%= event.location %></span>
-      <% event_times(event) %>
+    <div class='event'>
+      <%= image_tag image_event_path(event), :class => 'event-image' %>
+      <br />
+      <table class='event-table'>
+        <tr>
+          <td class='event-label'>Name:</td>
+          <td class='event-attr'><%= event.name %></td>
+        </tr>
+        <tr>
+          <td class='event-label'>Location:</td>
+          <td class='event-attr'><%= event.location || "TBD" %></td>
+        </tr>
+        <tr>
+          <td class='event-label'>Start Time:</td>
+          <td class='event-attr'><%= event.start_time || "TBD" %></td>
+        </tr>
+        <tr>
+          <td class='event-label'>End Time:</td>
+          <td class='event-attr'><%= event.end_time || "TBD" %></td>
+        </tr>
+        <tr>
+          <td class='event-label'>Duration:</td>
+          <td class='event-attr'><%= duration(event) || "TBD" %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='links'><%= event_links(event).html_safe %></td>
+        </tr>
+      </table>
     </div>
+    <br />
   <% end %>
 </div>

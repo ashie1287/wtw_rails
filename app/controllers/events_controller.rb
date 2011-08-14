@@ -91,4 +91,13 @@ class EventsController < ApplicationController
       send_data(@event.image)
     end
   end
+
+  def signup
+    @event = Event.find(params[:id])
+  end
+
+  def register
+    @event = Event.find(params[:id])
+    redirect_to(signup_event_path(@event))
+  end
 end

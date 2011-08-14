@@ -1,7 +1,14 @@
 WalkTheWalk::Application.routes.draw do
-  match 'events/:id/image' => 'events#image', :as => 'event_image'
-  resources :events
-
+  match '/about' => 'site#about', :as => :about
+  match '/contact' => 'site#contact', :as => :contact
+  resources :events do
+    member do
+      get  'image'
+      get  'signup'
+      post 'register'
+    end
+  end
+  root :to => "site#index", :as => :home
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -58,5 +65,4 @@ WalkTheWalk::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-  root :to => "site#index"
 end

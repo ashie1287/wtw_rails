@@ -17,7 +17,7 @@
 
   <div class="field">
     <% unless @event.new_record? %>
-      <%= image_tag event_image_path(@event) %>
+      <%= image_tag image_event_path(@event) %>
     <% end %>
     <%= f.label :image %><br />
     <%= f.file_field :image %>
