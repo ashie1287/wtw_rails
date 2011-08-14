@@ -82,14 +82,6 @@ p {
   color: #000;
 }
 
-.contacts-table {
-  margin: auto;
-}
-
-.contacts-table {
-  margin: auto;
-}
-
 .event {
   margin: 0.313em;
 }
@@ -98,9 +90,63 @@ p {
   display: block;
   float: left;
   margin: 0px 4em;
+  height: 100px;
+  width : 100px;
 }
 
-.event-table tr td, .contacts-table tr td {
+.full-event-image {
+  display: block;
+  text-align: center;
+  margin: 2em auto;
+}
+
+.field {
+  width: 250px;
+  margin: auto;
+}
+
+.field_with_errors {
+  padding: 2px;
+  display: table;
+}
+
+.field_with_errors label {
+  color: red;
+}
+
+.field_with_errors input {
+  border: 1px solid red;
+}
+
+.actions {
+  text-align:center;
+}
+
+#notice {
+  color: green;
+}
+
+#error_explanation {
+  width: 500px;
+  margin: 2em auto;
+  border: 2px solid red;
+  background-color: #f0f0f0;
+}
+
+#error_explanation ul {
+  text-align:center;
+}
+
+.auto-margin {
+  margin: auto;
+}
+
+.index-table tr td {
+  vertical-align:middle;
+}
+
+.event-table tr td,
+.contacts-table tr td {
   padding: 0.2em 1em;
 }
 

@@ -58,7 +58,6 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
 
-
     respond_to do |format|
       if @event.update_attributes(params[:event])
         format.html { redirect_to(@event, :notice => 'Event was successfully updated.') }
@@ -73,7 +72,7 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.xml
   def destroy
-    @event = Event.find(params[:id])
+    @event = Event.without_image.find(params[:id])
     @event.destroy
 
     respond_to do |format|
@@ -82,7 +81,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def image 
+  def image
     @event = Event.find(params[:id])
 
     if @event.image.blank?
@@ -94,10 +93,19 @@ class EventsController < ApplicationController
 
   def signup
     @event = Event.find(params[:id])
+    @user  = User.new
   end
 
   def register
-    @event = Event.find(params[:id])
-    redirect_to(signup_event_path(@event))
+    @event = Event.without_image.find(params[:id])
+    @user  = User.new(params[:user])
+
+    @user.events << @event
+
+    if @user.save
+      redirect_to(home_path, :notice => "You have successfully registered for '#{@event.name}'!")
+    else 
+      render(:action => 'signup')
+    end
   end
 end

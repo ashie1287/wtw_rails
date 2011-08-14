@@ -15,6 +15,8 @@ class Event < ActiveRecord::Base
 
   has_many :teams
 
+  named_scope :without_image, :select => "#{(self.column_names - ['image']).join(',')}"
+
   before_save :set_image_data
 
   private

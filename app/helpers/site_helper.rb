@@ -28,7 +28,7 @@ module SiteHelper
 
   def event_links(event)
     links = []
-    links << link_to('Sign Up!', signup_event_path(event))
+    links << link_to('Sign Up!', signup_event_path(event)) if event.start_time.blank? || event.start_time > Time.zone.now
     links.join(' | ')
   end
 end
