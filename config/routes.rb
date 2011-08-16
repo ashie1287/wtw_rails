@@ -8,7 +8,6 @@ WalkTheWalk::Application.routes.draw do
       post 'register'
     end
   end
-  resources :users
   root :to => "site#index", :as => :home
   # The priority is based upon order of creation:
   # first created -> highest priority.

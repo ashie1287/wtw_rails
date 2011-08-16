@@ -1,4 +1,4 @@
-<div id='event-signup' class="rounded-blurb spaced-blurb">
+<div class="rounded-blurb spaced-blurb">
   <h1>Registration</h1>
     <% if @user.errors.any? %>
       <div id="error_explanation">
@@ -11,44 +11,42 @@
         </ul>
       </div>
     <% end %>
-    <table class='event-table auto-margin'>
-      <tr>
-        <td class='event-label'>Name:</td>
-        <td class='event-attr'><%= @event.name %></td>
-      </tr>
-      <tr>
-        <td class='event-label'>Location:</td>
-        <td class='event-attr'><%= @event.location || "TBD" %></td>
-      </tr>
-      <tr>
-        <td class='event-label'>Start Time:</td>
-        <td class='event-attr'><%= @event.start_time || "TBD" %></td>
-      </tr>
-      <tr>
-        <td class='event-label'>End Time:</td>
-        <td class='event-attr'><%= @event.end_time || "TBD" %></td>
-      </tr>
-      <tr>
-        <td class='event-label'>Duration:</td>
-        <td class='event-attr'><%= duration(@event) || "TBD" %></td>
-      </tr>
-    </table>
+    <%= render(:partial => 'events/event_info') %>
     <br />
-  <%= form_for(@user, :url => register_event_path(@event)) do |f| %>
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-    </div>
-    <div class="actions">
-      <%= f.submit 'Register' %>
-    </div>
-  <% end %>
+    <%= form_for(@user, :url => register_event_path(@event)) do |f| %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
 
-  <div class='full-event-image center'>
-    <%= image_tag image_event_path(@event) %>
-  </div>
+      <% if @event.allow_teams? %>
+        <%= fields_for(@team) do |team_f| %>
+          <div class="field">
+            <%= team_f.label :name, "Team Name (Optional)" %>
+            <%= team_f.text_field :name %>
+          </div>
+        <% end %>
+
+        <%= fields_for(:partner, @partner) do |partner_f| %>
+          <div class="field">
+            <%= partner_f.label :name, "Partner Name (Optional)" %>
+            <%= partner_f.text_field :name %>
+          </div>
+          <div class="field">
+            <%= partner_f.label :email, "Partner Email (Optional)" %>
+            <%= partner_f.text_field :email %>
+          </div>
+        <% end %>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit 'Register' %>
+      </div>
+    <% end %>
+      
+    <%= render(:partial => 'events/event_image') %>
 </div>

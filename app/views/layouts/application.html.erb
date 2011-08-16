@@ -20,11 +20,7 @@
         <%= render_menu %>
       </div>
       <div class="col10">
-        <% unless notice.blank? %>
-          <div class="spaced-blurb rounded-blurb center">
-            <p id="notice"><%= notice %></p>
-          </div>
-        <% end %>
+        <%= render_flash %>
         <%= yield %>
       </div>
       <div class="row-end">&nbsp;</div>

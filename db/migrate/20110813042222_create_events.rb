@@ -6,6 +6,8 @@ class CreateEvents < ActiveRecord::Migration
       t.string     'location'
       t.datetime   'start_time'
       t.datetime   'end_time'
+      t.boolean    'allow_signup', :null => false, :default => false
+      t.boolean    'allow_teams', :null => false, :default => false
       t.timestamps
     end
   end

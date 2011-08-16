@@ -1,0 +1,22 @@
+<table class='event-table auto-margin'>
+  <tr>
+    <td class='event-label'>Name:</td>
+    <td class='event-attr'><%= @event.name %></td>
+  </tr>
+  <tr>
+    <td class='event-label'>Location:</td>
+    <td class='event-attr'><%= @event.location.blank? ? "TBD" : @event.location %></td>
+  </tr>
+  <tr>
+    <td class='event-label'>Start Time:</td>
+    <td class='event-attr'><%= @event.start_time.blank? ? "TBD" : @event.start_time %></td>
+  </tr>
+  <tr>
+    <td class='event-label'>End Time:</td>
+    <td class='event-attr'><%= @event.end_time.blank? ? "TBD" : @event.end_time %></td>
+  </tr>
+  <tr>
+    <td class='event-label'>Duration:</td>
+    <td class='event-attr'><%= duration(@event) || "TBD" %></td>
+  </tr>
+</table>

@@ -11,15 +11,15 @@
         </tr>
         <tr>
           <td class='event-label'>Location:</td>
-          <td class='event-attr'><%= event.location || "TBD" %></td>
+          <td class='event-attr'><%= event.location.blank? ? "TBD" : event.location %></td>
         </tr>
         <tr>
           <td class='event-label'>Start Time:</td>
-          <td class='event-attr'><%= event.start_time || "TBD" %></td>
+          <td class='event-attr'><%= event.start_time.blank? ? "TBD" : event.start_time %></td>
         </tr>
         <tr>
           <td class='event-label'>End Time:</td>
-          <td class='event-attr'><%= event.end_time || "TBD" %></td>
+          <td class='event-attr'><%= event.end_time.blank? ? "TBD" : event.end_time %></td>
         </tr>
         <tr>
           <td class='event-label'>Duration:</td>

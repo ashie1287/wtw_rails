@@ -1,21 +1,15 @@
 class Event < ActiveRecord::Base
   validates_presence_of   :name
-  validates_uniqueness_of :name, 
-                            :case_sensitive => false,
-                            :scope => [:start_time, :end_time]
+  validates_uniqueness_of :name, :case_sensitive => false, :scope => [:start_time, :end_time]
 
   validate :start_must_be_in_the_future
   validate :end_is_after_start
 
-  has_many :user_events
-
-  has_many :attendees,
-             :class_name => User,
-             :through => :user_events
-
+  has_many :user_event_teams
+  has_many :users, :through => :user_event_teams
   has_many :teams
 
-  named_scope :without_image, :select => "#{(self.column_names - ['image']).join(',')}"
+  scope :without_image, :select => "#{(self.column_names - ['image']).join(',')}"
 
   before_save :set_image_data
 

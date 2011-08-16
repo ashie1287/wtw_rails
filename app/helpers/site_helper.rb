@@ -28,7 +28,16 @@ module SiteHelper
 
   def event_links(event)
     links = []
-    links << link_to('Sign Up!', signup_event_path(event)) if event.start_time.blank? || event.start_time > Time.zone.now
+    links << link_to('Details', event_path(event))
+    if event.allow_signup? && (event.start_time.blank? || event.start_time > Time.zone.now)
+      links << link_to('Sign Up!', signup_event_path(event))
+    end
     links.join(' | ')
+  end
+
+  def render_flash
+    unless notice.blank?
+      render(:partial => 'site/flash')
+    end
   end
 end

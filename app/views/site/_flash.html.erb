@@ -1,0 +1,9 @@
+<div class="spaced-blurb rounded-blurb center">
+  <% if notice.is_a?(Array) %>
+    <% notice.each do |msg| %>
+      <p id="notice"><%= msg %></p>
+    <% end %>
+  <% else %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+</div>

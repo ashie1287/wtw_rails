@@ -1,33 +1,4 @@
-<div class="spaced-blurb rounded-blurb">
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Image:</b>
-  <%= image_tag image_event_path(@event) %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @event.name %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%= @event.location %>
-</p>
-
-<p>
-  <b>Start time:</b>
-  <%= @event.start_time %>
-</p>
-
-<p>
-  <b>End time:</b>
-  <%= @event.end_time %>
-</p>
-
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<div class="rounded-blurb spaced-blurb">
+  <h1>Event Details</h1>
+  <%= render(:partial => 'events/event_details') %>
 </div>
