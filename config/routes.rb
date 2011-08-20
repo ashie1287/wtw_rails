@@ -1,13 +1,17 @@
 WalkTheWalk::Application.routes.draw do
+
   match '/about' => 'site#about', :as => :about
   match '/contact' => 'site#contact', :as => :contact
   resources :events do
     member do
+      get  'users'
       get  'image'
       get  'signup'
       post 'register'
     end
+    resources :teams
   end
+  resources :users
   root :to => "site#index", :as => :home
   # The priority is based upon order of creation:
   # first created -> highest priority.

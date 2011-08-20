@@ -1,0 +1,22 @@
+<div class='index spaced-blurb rounded-blurb'>
+<h1>Listing users</h1>
+<table class='index-table'>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th colspan='3'>Actions</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td class='index-attr'><%= user.name %></td>
+    <td class='index-attr'><%= user.email %></td>
+    <td class='action-button'><%= button_to 'Show', user_path(user), :method => :get %></td>
+    <td class='action-button'><%= button_to 'Edit', edit_user_path(user), :method => :get %></td>
+    <td class='action-button'><%= button_to 'Destroy', user_path(user), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>

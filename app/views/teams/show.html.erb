@@ -1,0 +1,10 @@
+<div class='spaced-blurb rounded-blurb'>
+  <h1>Team details</h1>
+  <table class='event-table auto-margin'>
+    <tr>
+      <td class='event-label'>Team Name:</td>
+      <td class='event-attr'><%= @team.name %></td>
+    </tr>
+    <%= render_user_views_for(@team) %>
+  </table>
+</div>

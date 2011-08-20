@@ -134,15 +134,26 @@ p {
 }
 
 #error_explanation ul {
-  text-align:center;
+  text-align: center;
 }
 
 .auto-margin {
   margin: auto;
 }
 
+.index-table {
+  margin: auto;
+}
+
 .index-table tr td {
-  vertical-align:middle;
+  vertical-align: middle;
+}
+
+.index-table .index-attr {
+  padding: 1em;
+}
+.index-table .action-buttons input {
+  width: 100px;
 }
 
 .event-table tr td,

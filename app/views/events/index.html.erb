@@ -1,4 +1,4 @@
-<div class='spaced-blurb rounded-blurb'>
+<div class='index spaced-blurb rounded-blurb'>
   <h1>Listing events</h1>
 
   <table class='index-table'>
@@ -8,19 +8,22 @@
       <th>Location</th>
       <th>Start time</th>
       <th>End time</th>
-      <th></th>
-      <th></th>
+      <th>Actions</th>
     </tr>
 
   <% @events.each do |event| %>
     <tr>
-      <td><%= image_tag image_event_path(event), :style => 'float:left; width: 100px; height: 100px;' %></td>
-      <td><%= event.name %></td>
-      <td><%= event.location %></td>
-      <td><%= event.start_time %></td>
-      <td><%= event.end_time %></td>
-      <td><%= button_to 'Edit', edit_event_path(event), :method => :get %></td>
-      <td><%= button_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td class='index-attr'><%= image_tag image_event_path(event), :style => 'float:left; width: 100px; height: 100px;' %></td>
+      <td class='index-attr'><%= event.name %></td>
+      <td class='index-attr'><%= event.location %></td>
+      <td class='index-attr'><%= event.start_time %></td>
+      <td class='index-attr'><%= event.end_time %></td>
+      <td class='action-buttons'>
+      <%= button_to('Users', users_event_path(event), :method => :get) if event.allow_signup? %>
+      <%= button_to('Teams', event_teams_path(event), :method => :get) if event.allow_teams? %>
+      <%= button_to 'Show', event_path(event), :method => :get %>
+      <%= button_to 'Edit', edit_event_path(event), :method => :get %>
+      <%= button_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
   </table>
