@@ -13,13 +13,13 @@
 ActiveRecord::Schema.define(:version => 20110815220943) do
 
   create_table "events", :force => true do |t|
-    t.binary   "image"
-    t.string   "name",                            :null => false
+    t.binary   "image",        :limit => 16777215
+    t.string   "name",                                                :null => false
     t.string   "location"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.boolean  "allow_signup", :default => false, :null => false
-    t.boolean  "allow_teams",  :default => false, :null => false
+    t.boolean  "allow_signup",                     :default => false, :null => false
+    t.boolean  "allow_teams",                      :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

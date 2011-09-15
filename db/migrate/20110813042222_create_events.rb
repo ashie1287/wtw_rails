@@ -1,7 +1,7 @@
 class CreateEvents < ActiveRecord::Migration
   def self.up
     create_table :events do |t|
-      t.binary     'image'
+      t.binary     'image', :limit => 10.megabytes
       t.string     'name', :null => false
       t.string     'location'
       t.datetime   'start_time'
