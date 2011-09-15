@@ -1,17 +1,20 @@
 module SiteHelper
   def render_menu
-    menu_hash = {
-                  'Home'        => home_path,
+    menu_hash = ActiveSupport::OrderedHash.new
+    {
+                      'Home'        => home_path,
 =begin
-                  'Causes'      => url_for(:controller => 'site', :action => 'causes'),
-                  'Fundraising' => url_for(:controller => 'site', :action => 'fundraising'),
-                  'Sponsors'    => url_for(:controller => 'site', :action => 'sponsors'),
-                  'About'       => url_for(:controller => 'site', :action => 'about'),
-                  'Contact'     => url_for(:controller => 'site', :action => 'contact')
+                      'Causes'      => url_for(:controller => 'site', :action => 'causes'),
+                      'Fundraising' => url_for(:controller => 'site', :action => 'fundraising'),
+                      'Sponsors'    => url_for(:controller => 'site', :action => 'sponsors'),
+                      'About'       => url_for(:controller => 'site', :action => 'about'),
+                      'Contact'     => url_for(:controller => 'site', :action => 'contact')
 =end
-                  'About'       => about_path,
-                  'Contact'     => contact_path
-                }
+                      'About'       => about_path,
+                      'Contact'     => contact_path
+    }.each do |k,v|
+      menu_hash[k] = v
+    end
 
     render(:partial => 'site/menu', :locals => {:menu_items => menu_hash})
   end
