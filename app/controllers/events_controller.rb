@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  before_filter :authenticate, :except => [:show, :signup, :register, :image]
+  before_filter :authenticate, :except => [:show, :signup, :register]
   before_filter :event_must_have_signup_ability, :only => [:signup, :register]
 
   def users
@@ -45,20 +45,16 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.without_image.find(params[:id])
+    @event = Event.find(params[:id])
     @event.destroy
 
     redirect_to(events_url)
   end
 
-  def image
+  def remove_image
     @event = Event.find(params[:id])
-
-    if @event.image.blank?
-      send_file(File.join(Rails.root, 'public', 'images', 'noimage.gif'), :type => 'image/gif')
-    else
-      send_data(@event.image)
-    end
+    @event.remove_image
+    redirect_to({:action => :edit}, :notice => 'Image successfully removed from event.')
   end
 
   def signup

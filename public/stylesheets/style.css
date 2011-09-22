@@ -89,9 +89,7 @@ p {
 .event-image {
   display: block;
   float: left;
-  margin: 0px 4em;
-  height: 100px;
-  width : 100px;
+  margin: 1em 4em;
 }
 
 .full-event-image {
@@ -102,7 +100,8 @@ p {
 
 .field {
   width: 250px;
-  margin: auto;
+  margin: 0.5em auto;
+  
 }
 
 .field_with_errors {

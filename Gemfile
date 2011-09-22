@@ -9,6 +9,8 @@ gem 'rake', '0.9.2'
 
 gem 'mysql'
 
+gem 'paperclip'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

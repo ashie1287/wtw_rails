@@ -10,18 +10,17 @@ class Event < ActiveRecord::Base
   has_many :users, :through => :user_event_teams
   has_many :teams, :dependent => :destroy
 
-  scope :without_image, :select => "#{(self.column_names - ['image']).join(',')}"
+  has_attached_file :image, :styles => { :thumb => "100x100>" },
+                            :default_url => '/images/noimage.gif'
 
-  before_save :set_image_data
   after_save  :destroy_teams_and_uets
 
-  private
-
-  def set_image_data
-    if self.image.is_a?(ActionDispatch::Http::UploadedFile)
-      self.image = self.image.tempfile.read
-    end
+  def remove_image
+    self.image = nil
+    self.save!
   end
+
+  private
 
   def end_is_after_start
     if self.start_time && self.end_time && self.start_time > self.end_time

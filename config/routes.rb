@@ -5,7 +5,7 @@ WalkTheWalk::Application.routes.draw do
   resources :events do
     member do
       get  'users'
-      get  'image'
+      post 'remove_image'
       get  'signup'
       post 'register'
     end

@@ -1,23 +1,26 @@
 <%= stylesheet_link_tag    'anytime' %>
 <%= javascript_include_tag 'anytime' %>
 
+<% if @event.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+    <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% unless @event.new_record? %>
+  <%= image_tag(@event.image.url, :class => 'full-event-image') %>
+<% end %>
+<br />
+<div class='actions'>
+  <%= button_to('Remove image', remove_image_event_path(@event)) %>
+</div>
 <%= form_for(@event, :html => {:multipart => true}) do |f| %>
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-      <ul>
-      <% @event.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <% unless @event.new_record? %>
-    <%= image_tag image_event_path(@event), :class => 'full-event-image '%>
-  <% end %>
-  <br />
   <div class="field">
     <%= f.label :image %>
     <%= f.file_field :image %>
@@ -53,7 +56,7 @@
   </div>
 <% end %>
 
-<%= javascript_tag do -%>
+<%= javascript_tag do %>
   AnyTime.picker("event_start_time", { format: "%M %d, %Y %I:%i %p"} );
   AnyTime.picker("event_end_time",   { format: "%M %d, %Y %I:%i %p"} );
-<% end -%>
+<% end %>

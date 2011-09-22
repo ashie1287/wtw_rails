@@ -2,7 +2,7 @@
   <h1>Upcoming Events</h1>
   <% @events.each do |event| %>
     <div class='event'>
-      <%= image_tag image_event_path(event), :class => 'event-image' %>
+      <%= image_tag(event.image.url(:thumb), :class => 'event-image') %>
       <br />
       <table class='event-table'>
         <tr>
