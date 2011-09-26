@@ -1,0 +1,35 @@
+<%= stylesheet_link_tag '/fancybox/jquery.fancybox-1.3.4.css' %>
+<%= javascript_include_tag '/fancybox/jquery.fancybox-1.3.4.js' %>
+<%= javascript_include_tag '/fancybox/jquery.mousewheel-3.0.4.pack.js' %>
+<div id='thanksgiving' class="rounded-blurb spaced-blurb">
+  <h1>Thanksgiving / Passover-Easter Dinners</h1>
+  <p>Walk The Walk has been providing home-cooked holiday meals to shut-in and needy senior citizens in areas including Howell Township, Hoboken, and New Brunswick.</p>
+  <h2>Articles:</h2>
+  <div class='indent'>
+  <%= link_to("Meals for senior citizens brighten Thanksgiving",'http://newstranscript.gmnews.com/news/2010-11-10/Front_Page/Meals_for_senior_citizens_brighten_Thanksgiving.html',  :target => '_blank'); %><br/>
+  <%= link_to("Hoboken gives back: local charity brings Thanksgiving to 80 shut-in seniors",'http://www.nj.com/hobokennow/index.ssf/2010/11/hoboken_gives_back_local_chari.html',:target => '_blank'); %><br/>
+  <%= link_to("Want to give something back? Deliver Thanksgiving meals to Hoboken's senior citizens",'http://www.nj.com/hobokennow/index.ssf/2009/11/want_to_give_something_back_de.html', :target =>'_blank'); %><br/>
+  <%= link_to("Home-bound Hoboken senior citizens get Thanksgiving dinner brought to them",'http://www.nj.com/hobokennow/index.ssf/2009/11/home-bound_hoboken_senior_citi.html', :target => '_blank'); %><br/>
+  <%= link_to("Extracurricular Generosity", '/pdfs/extracurricular_generosity.pdf', :target => '_blank'); %><br/>
+  </div>
+  <br />
+  <h2>Pictures:</h2>
+  <div class='indent'>
+    <%= render_fancybox_gallery(%w(seniors thanksgiving)) %>
+  </div>
+</div>
+<div id='casino' class="rounded-blurb spaced-blurb">
+  <h1>Casino Day</h1>
+  <p>In an effort to promote socialization among seniors, Walk The Walk organized an event which arranged casino games such as table poker, roulette, craps and bingo.  The event was a huge success and provided a great atmosphere for interaction for the seniors.</p>
+  <br />
+  <h2>Pictures:</h2>
+  <div class='indent'>
+    <%= render_fancybox_gallery(%w(seniors casino)) %>
+  </div>
+</div>
+
+<%= javascript_tag do %>
+  $(document).ready(function(){
+    $('a.fancybox-gal').fancybox();
+  });
+<% end %>

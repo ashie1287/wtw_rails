@@ -1,23 +1,28 @@
 module SiteHelper
-  def render_menu
-    menu_hash = ActiveSupport::OrderedHash.new
-    
-=begin
-                      'Causes'      => url_for(:controller => 'site', :action => 'causes'),
-                      'Fundraising' => url_for(:controller => 'site', :action => 'fundraising'),
-                      'Sponsors'    => url_for(:controller => 'site', :action => 'sponsors'),
-                      'About'       => url_for(:controller => 'site', :action => 'about'),
-                      'Contact'     => url_for(:controller => 'site', :action => 'contact')
-=end
-    menu_hash['Home'   ] = home_path
-    menu_hash['About'  ] = about_path
-    menu_hash['Contact'] = contact_path
+  IMAGE_REGEX = /\.(jpg|png|gif)$/
 
-    render(:partial => 'site/menu', :locals => {:menu_items => menu_hash})
+  def render_menu
+    menu_items = ActiveSupport::OrderedHash.new
+    
+    menu_items['Home'] = home_path
+    %w(About Seniors Sponsors Contact).each do |page|
+      menu_items[page] = site_path(page.downcase)
+    end
+
+    render('site/menu', :menu_items => menu_items)
+  end
+
+  def render_fancybox_gallery(image_dir)
+    images = Dir.entries(File.join('public', 'images', *image_dir)).grep(IMAGE_REGEX)
+    render(:partial => 'site/fancybox_image',
+           :collection => images.sort_by(&:to_i),
+           :as => :image,
+           :locals => {:src => File.join('/', 'images', *image_dir),
+                       :rel => image_dir.join('_')})
   end
 
   def render_last_events
-    render(:partial => 'site/events')
+    render('site/events')
   end
 
   def duration(event)
@@ -37,7 +42,7 @@ module SiteHelper
 
   def render_flash
     unless notice.blank?
-      render(:partial => 'site/flash')
+      render('site/flash')
     end
   end
 end

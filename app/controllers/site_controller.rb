@@ -3,6 +3,7 @@ class SiteController < ApplicationController
     @events = Event.order('created_at').limit(5).reverse_order
   end
 
-  def about
+  def show
+    render(params[:id])
   end
 end

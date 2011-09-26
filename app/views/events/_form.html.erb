@@ -1,5 +1,7 @@
 <%= stylesheet_link_tag    'anytime' %>
 <%= javascript_include_tag 'anytime' %>
+<%= javascript_include_tag '/ckeditor/ckeditor' %>
+<%= javascript_include_tag '/ckeditor/adapters/jquery' %>
 
 <% if @event.errors.any? %>
   <div id="error_explanation">
@@ -15,11 +17,11 @@
 
 <% unless @event.new_record? %>
   <%= image_tag(@event.image.url, :class => 'full-event-image') %>
+  <br />
+  <div class='actions'>
+    <%= button_to('Remove image', remove_image_event_path(@event)) %>
+  </div>
 <% end %>
-<br />
-<div class='actions'>
-  <%= button_to('Remove image', remove_image_event_path(@event)) %>
-</div>
 <%= form_for(@event, :html => {:multipart => true}) do |f| %>
   <div class="field">
     <%= f.label :image %>
@@ -51,12 +53,22 @@
     <%= f.label :allow_teams? %>
     <%= f.check_box :allow_teams? %>
   </div>
+  <%= f.label(:description) %>
+  <%= f.text_area(:description) %>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
 
 <%= javascript_tag do %>
-  AnyTime.picker("event_start_time", { format: "%M %d, %Y %I:%i %p"} );
-  AnyTime.picker("event_end_time",   { format: "%M %d, %Y %I:%i %p"} );
+  $(document).ready(function() {
+    $('#event_start_time').AnyTime_picker({ format: "%M %d, %Y %I:%i %p"});
+    $('#event_end_time').AnyTime_picker({ format: "%M %d, %Y %I:%i %p"});
+
+    $('#event_description').ckeditor({
+      tabSpaces: 5,
+      filebrowserUploadUrl: '/woo'
+    });
+
+  });
 <% end %>
