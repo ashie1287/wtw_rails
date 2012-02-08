@@ -1,0 +1,120 @@
+/* ============================== */
+/* ! Layout for desktop version   */
+/* ============================== */
+
+  * {
+    margin: 0;
+  }
+
+  html {
+      height: 100%;
+  }
+
+	body {
+background: #c8d7dc; /* Old browsers */
+
+background: -moz-linear-gradient(top,  #c8d7dc 0%, #e3eaed 63%, #f2f5f6 100%); /* FF3.6+ */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c8d7dc), color-stop(63%,#e3eaed), color-stop(100%,#f2f5f6)); /* Chrome,Safari4+ */
+
+background: -webkit-linear-gradient(top,  #c8d7dc 0%,#e3eaed 63%,#f2f5f6 100%); /* Chrome10+,Safari5.1+ */
+
+background: -o-linear-gradient(top,  #c8d7dc 0%,#e3eaed 63%,#f2f5f6 100%); /* Opera 11.10+ */
+
+background: -ms-linear-gradient(top,  #c8d7dc 0%,#e3eaed 63%,#f2f5f6 100%); /* IE10+ */
+
+background: linear-gradient(top,  #c8d7dc 0%,#e3eaed 63%,#f2f5f6 100%); /* W3C */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8d7dc', endColorstr='#f2f5f6',GradientType=0 ); /* IE6-9 */
+
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Arial", Helvetica, sans-serif;
+    font-size: 1.2em;
+	}
+
+  #header-img {
+    height: 100px;
+    width: 978px;
+    background-image: url('/images/newbanner.png');
+  }
+
+  #menu {
+    border-top: 0.2em #BBB solid;
+    border-bottom: 0.2em #BBB solid;
+  }
+
+  #menu ul {
+    padding:0; 
+    margin:0; 
+    width: 100%; 
+    list-style-type: none;
+  }
+
+  #menu ul li {
+    float: left; 
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 20%;
+    line-height: 3em;
+    text-align: center;
+  }
+
+  #menu ul li a {
+    display: block;
+    text-decoration: none;
+    outline: none;
+    color: #666666;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    /*background-color: #E8E8E8;*/
+  }
+
+  #menu ul li a:hover {
+    color: #FFFFFF;
+    /*background-color: #B7B8DE;*/
+    background-color: #5290E3;
+  }
+
+  .wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -3.2em;
+  }
+
+  #footer {
+    text-align: center;
+    border-top: 0.2em lightgray dotted;
+  }
+
+  #footer, .push {
+    height: 3em;
+  }
+
+/* ============================= */
+/* ! Layout for mobile version   */
+/* ============================= */
+
+@media handheld, only screen and (max-width: 767px) {
+
+	body {
+		
+	}
+
+}
+
+
+/* ========================================== */
+/* ! Provide higher res assets for iPhone 4   */
+/* ========================================== */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+
+/*	.logo {
+		background: url(logo2x.jpg) no-repeat;
+		background-size: 212px 303px;
+	}*/
+
+}

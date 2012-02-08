@@ -1,41 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Walk The Walk</title>
-  <%= stylesheet_link_tag 'reset', '978', 'style' %>
-  <%= javascript_include_tag 'jquery-1.4.2.min' %>
+	<meta charset="utf-8" />
   <%= csrf_meta_tag %>
+  <title>Walk The Walk</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<!-- 1140px Grid styles for IE -->
+	<!--[if lte IE 9]><link rel="stylesheet" href="/stylesheets/ie.css" type="text/css" media="screen" /><![endif]-->
+
+	<!-- The 1140px Grid - http://cssgrid.net/ -->
+	<link rel="stylesheet" href="/stylesheets/1140.css" type="text/css" media="screen" />
+	
+	<!-- Your styles -->
+	<link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="screen" />
+	
+	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
+	<script type="text/javascript" src="/javascripts/css3-mediaqueries.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery-1.4.2.min.js"></script>
 </head>
 <body>
-<div class="layout-978">
-  <div class="row">
-    <div class="col12">
-      <div id="header"></div>
-    </div>
-    <div class="row-end">&nbsp;</div>
-  </div>
-  <div id="content" class="rounded-blurb">
-    <div class="row">
-      <div class="col2">
+  <div class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div id="header-img"></div>
+      </div>
+      <div id="menu" class="row">
         <%= render_menu %>
       </div>
-      <div class="col10">
-        <%= render_flash %>
-        <%= yield %>
-      </div>
-      <div class="row-end">&nbsp;</div>
     </div>
-    <div class="row">
-      <div class="col12">
-        <div id="footer" class="center">
-          <span>Copyright Walk The Walk &copy; 2011</span>
-          <br />
-          <span>All Rights Reserved.</span>
-        </div>
-      </div>
-      <div class="row-end">&nbsp;</div>
+    <%= yield %>
+    <div class="push"></div>
+  </div>
+  <div class="container">
+    <div id="footer" class="row">
+      <span>Copyright Walk The Walk &copy; <%= Time.now.year %></span>
+      <br />
+      <span>All Rights Reserved.</span>
     </div>
   </div>
-</div>
 </body>
 </html>
