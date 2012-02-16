@@ -1,27 +1,46 @@
-<div class="container">
-  <div class="slider-wrapper theme-default">
-    <div id="slider" class="nivoSlider">
-      <img src="https://www.google.com/intl/en_com/images/srpr/logo3w.png" />
-      <img src="https://www.google.com/intl/en_com/images/srpr/logo3w.png" />
-      <img src="https://www.google.com/intl/en_com/images/srpr/logo3w.png" />
-      <img src="https://www.google.com/intl/en_com/images/srpr/logo3w.png" />
+<div class="page container">
+  <div class="row">
+    <div class="slider-wrapper theme-default sixcol">
+      <div id="slider" class="nivoSlider">
+        <%#= image_tag("/images/front/1.jpg", :title => "Thanksgiving 2011") %>
+        <%#= image_tag("/images/front/2.jpg", :title => "Casino Day 2010") %>
+        <%#= image_tag("/images/front/3.jpg", :title => "Thanksgiving 2011") %>
+        <%#= image_tag("/images/front/4.jpg", :title => "Casino Day 2010") %>
+        <%= image_tag("/images/front/1.jpg") %>
+        <%= image_tag("/images/front/2.jpg") %>
+        <%= image_tag("/images/front/3.jpg") %>
+        <%= image_tag("/images/front/4.jpg") %>
+      </div>
+    </div>
+
+    <!-- nivo slider -->
+    <%= stylesheet_link_tag "/nivo-slider/themes/default/default" %>
+    <%= stylesheet_link_tag "/nivo-slider/nivo-slider" %>
+    <%= javascript_include_tag "/nivo-slider/jquery.nivo.slider.pack.js" %>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#slider').nivoSlider({
+          pauseTime: '5000'
+        });
+    });
+    </script>
+
+    <div class="sixcol last">
+      <p class="page-title">Welcome!</p>
+      <p class="page-text">Walk The Walk is a non profit organization that pursues various charitable endeavors throughout the New Jersey area.  All of our proceeds go directly to local charities or Walk The Walk organized charitable events.  Our goal is to raise money and organize social events that help local New Jersey communities.</p>
+    </div>
+  </div>
+  <div class='seperator'></div>
+  <div class="row">
+    <div class="fourcol">
+      <p class="page-subtitle">WTW News</p>
+    </div>
+    <div class="fourcol">
+      <p class="page-subtitle">Upcoming Events</p>
+    </div>
+    <div class="fourcol last">
+      <p class="page-subtitle">Get Involved!</p>
     </div>
   </div>
 </div>
-<div class="container">
-  <div id="welcome" class="row">
-    <h1>Welcome!</h1>
-    <p>Walk The Walk is a non profit organization that pursues various charitable endeavors throughout the New Jersey area.  All of our proceeds go directly to local charities or Walk The Walk organized charitable events.  Our goal is to raise money and organize social events that help local New Jersey communities.</p>
-  </div>
-</div>
-
-<!-- nivo slider -->
-<%= stylesheet_link_tag "/nivo-slider/themes/default/default" %>
-<%= stylesheet_link_tag "/nivo-slider/nivo-slider" %>
-<%= javascript_include_tag "/nivo-slider/jquery.nivo.slider.pack.js" %>
-
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#slider').nivoSlider();
-});
-</script>

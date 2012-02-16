@@ -1,3 +1,3 @@
-<%= link_to({}, {:href => File.join(src, image), :class => 'fancybox-gal', :rel => rel}) do %>
-  <%= image_tag(File.join(src, "thumbs", image), :class => 'fancybox-img') %>
+<%= link_to({}, {:href => [src, image].join('/'), :class => 'fancybox-gal', :rel => rel}) do %>
+  <%= image_tag([src, 'thumbs', image].join('/'), :class => 'fancybox-img') %>
 <% end %>

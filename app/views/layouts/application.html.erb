@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
   <%= csrf_meta_tag %>
+  <%= favicon_link_tag %>
   <title>Walk The Walk</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -21,14 +22,17 @@
 </head>
 <body>
   <div class="wrapper">
-    <div class="container">
       <div class="row">
         <div id="header-img"></div>
+        <div id="header-text">
+          <span>Improving Communities One Step At A Time</span>
+        </div>
       </div>
-      <div id="menu" class="row">
-        <%= render_menu %>
+      <div class="row">
+        <div id="menu">
+          <%= render_menu %>
+        </div>
       </div>
-    </div>
     <%= yield %>
     <div class="push"></div>
   </div>

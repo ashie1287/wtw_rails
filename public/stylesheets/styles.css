@@ -2,15 +2,39 @@
 /* ! Layout for desktop version   */
 /* ============================== */
 
+  .page {
+    margin-top: 0.5em;
+  }
+
+  .page-title {
+    border-bottom: 3px #BBB solid;
+    font-size: 1.8em;
+    color: #666673;
+  }
+
+  .page-subtitle {
+    border-bottom: 2px #BBB solid;
+    font-size: 1.4em;
+    color: #666673;
+  }
+
+  .page-text {
+    margin-top: 1em;
+    text-indent: 1em;
+    font-size: 0.9em;
+  }
+
+  .seperator {
+    border-bottom: 1px lightgray dotted;
+  }
 
   .nivoSlider {
     position:relative;
-    width:275px;
-    height:95px;
+    width:484px;
+    height:359px;
     background: url(/nivo-slider/themes/default/loading.gif) no-repeat 50% 50%;
-    margin: 50px auto;
   }
-  .nivoSlider img {
+  .nivoSlider > img {
     position:absolute;
     top:0px;
     left:0px;
@@ -19,6 +43,10 @@
   .nivoSlider a {
     border:0;
     display:block;
+  }
+
+  .nivo-caption {
+    text-align: center;
   }
 
   * {
@@ -33,14 +61,14 @@
   }
 
 	body {
-    background: rgb(204,204,204); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(204,204,204,1) 0%, rgba(249,249,249,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(204,204,204,1)), color-stop(100%,rgba(249,249,249,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(204,204,204,1) 0%,rgba(249,249,249,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(204,204,204,1) 0%,rgba(249,249,249,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(204,204,204,1) 0%,rgba(249,249,249,1) 100%); /* IE10+ */
-    background: linear-gradient(top,  rgba(204,204,204,1) 0%,rgba(249,249,249,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#f9f9f9',GradientType=0 ); /* IE6-9 */
+    background: #a0a0a0; /* Old browsers */
+    background: -moz-linear-gradient(top,  #a0a0a0 0%, #f9f9f9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a0a0a0), color-stop(100%,#f9f9f9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #a0a0a0 0%,#f9f9f9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #a0a0a0 0%,#f9f9f9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #a0a0a0 0%,#f9f9f9 100%); /* IE10+ */
+    background: linear-gradient(top,  #a0a0a0 0%,#f9f9f9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0a0a0', endColorstr='#f9f9f9',GradientType=0 ); /* IE6-9 */
 
     height: 100%;
     background-repeat: no-repeat;
@@ -49,20 +77,27 @@
 	}
 
   #header-img {
-    height: 100px;
-    width: 978px;
-    background-image: url('/images/newbanner.png');
+    width: 100px;
+    height: 89px;
+    background-image: url('/images/wtw.jpg');
+    float:left;
   }
 
-  #menu {
-    border-top: 0.2em #BBB solid;
-    border-bottom: 0.2em #BBB solid;
+
+  #header-text {
+    line-height: 5em;
   }
+
+  #header-text span {
+    font-size: 3em;
+    font-style: italic;
+    margin: 0em 0.5em;
+  }
+
 
   #menu ul {
     padding:0; 
     margin:0; 
-    width: 100%; 
     list-style-type: none;
   }
 
@@ -71,23 +106,26 @@
     padding-right: 0px;
     padding-left: 0px;
     width: 20%;
-    line-height: 3em;
+    line-height: 2em;
     text-align: center;
+    border-top: 0.1em #BBB solid;
+    border-bottom: 0.1em #BBB solid;
     border-left: 0.1em #BBB solid;
-    border-right: 0.1em #BBB solid;
+  }
+
+  #menu ul li:first-child {
+    border-left: 0px;
   }
 
   #menu ul li a {
     display: block;
     text-decoration: none;
     outline: none;
-    color: #666666;
-    /*background-color: #E8E8E8;*/
+    background-color: #808080;
+    color: #FFF;
   }
 
   #menu ul li a:hover {
-    color: #FFFFFF;
-    /*background-color: #B7B8DE;*/
     background-color: #5290E3;
   }
 
@@ -98,15 +136,12 @@
     height: 100%;
     margin: 0 auto -3em;
     background-color: #F9F9F9;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
   }
-
 
   #footer {
     text-align: center;
-    border-top: 0.2em lightgray dotted;
+    border-top: 1px lightgray dotted;
+    font-size: 0.8em;
   }
 
   #footer, .push {

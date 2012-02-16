@@ -14,10 +14,11 @@ module SiteHelper
 
   def render_fancybox_gallery(image_dir)
     images = Dir.entries(File.join('public', 'images', *image_dir)).grep(IMAGE_REGEX)
+    src = ['', 'images', *image_dir].join('/')
     render(:partial => 'site/fancybox_image',
            :collection => images.sort_by(&:to_i),
            :as => :image,
-           :locals => {:src => File.join('/', 'images', *image_dir),
+           :locals => {:src => src,
                        :rel => image_dir.join('_')})
   end
 
@@ -44,5 +45,14 @@ module SiteHelper
     unless notice.blank?
       render('site/flash')
     end
+  end
+
+  def render_slider_images(image_dir)
+    images = Dir.entries(File.join('public', 'images', *image_dir)).grep(IMAGE_REGEX)
+    src = ['', 'images', *image_dir].join('/')
+    images.map {|image|
+      img = [src, image].join('/')
+      image_tag(img)
+    }.join.html_safe
   end
 end
