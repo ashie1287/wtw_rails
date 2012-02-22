@@ -5,7 +5,7 @@ module SiteHelper
     menu_items = ActiveSupport::OrderedHash.new
     
     menu_items['Home'] = home_path
-    %w(About Seniors Sponsors Contact).each do |page|
+    %w(About Seniors Sponsors Donate Contact).each do |page|
       menu_items[page] = site_path(page.downcase)
     end
 

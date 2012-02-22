@@ -22,11 +22,11 @@
 </head>
 <body>
   <div class="wrapper">
-      <div class="row">
-        <div id="header-img"></div>
-        <div id="header-text">
-          <span>Improving Communities One Step At A Time</span>
-        </div>
+      <div id="header" class="row">
+        <%= image_tag "/images/wtw.jpg", :id => "header-img" %>
+        <span id="header-text">Improving Communities One Step At A Time</span>
+        <%= render(:partial => "paypal_form") %>
+        <a href="<%= home_path %>"><span id="header-link"></span></a>
       </div>
       <div class="row">
         <div id="menu">
