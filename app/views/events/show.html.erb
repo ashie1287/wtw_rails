@@ -1,4 +1,22 @@
-<div class="rounded-blurb spaced-blurb">
-  <h1>Event Details</h1>
-  <%= render(:partial => 'events/event_details') %>
+<div class="page container">
+  <div class="row">
+    <div class="twelvecol last">
+        <p class="page-title center-text"><%= @event.name %></p>
+     </div>
+  </div>
+  <div class="row">
+    <div class="fourcol">
+      <div class="page-section">
+        <%= image_tag(@event.image.url, :class => "event-img") %>
+        <%= render(:partial => 'shared/event_table', :locals => {:event => @event}) %>
+      </div>
+    </div>
+    <div class="eightcol last">
+      <div class="page-section">
+        <div class="event-detail">
+          <%= raw(@event.description) %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

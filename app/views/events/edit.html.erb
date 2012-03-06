@@ -1,8 +1,13 @@
-<div class='spaced-blurb rounded-blurb'>
-<h1>Editing event</h1>
+<div class="page container">
+  <div class="row">
+    <div class="twelvecol last">
+      <div class="page-section">
+        <p class="page-title">Editing Event</p>
+        <%= render 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+        <%= link_to 'Show', event_path(@event) %> |
+        <%= link_to 'Back', events_path %>
+      </div>
+    </div>
+  </div>
 </div>

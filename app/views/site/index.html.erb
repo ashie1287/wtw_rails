@@ -36,9 +36,17 @@
   <div class="row">
     <div class="fourcol">
       <p class="page-subtitle">WTW News</p>
+      <div class="page-section">
+      <% 5.times do %>
+        <%= render(:partial => 'news_blurb') %>
+      <% end %>
+      </div>
     </div>
     <div class="fourcol">
       <p class="page-subtitle">Upcoming Events</p>
+      <div class="page-section">
+        <%= render(:partial => 'event', :collection => @events) %>
+      </div>
     </div>
     <div class="fourcol last">
       <p class="page-subtitle">Get Involved!</p>

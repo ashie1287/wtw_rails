@@ -18,14 +18,14 @@
 	
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<%= javascript_include_tag "/javascripts/css3-mediaqueries" %>
-	<%= javascript_include_tag "/javascripts/jquery-1.7.1.min.js" %>
+	<%= javascript_include_tag "/javascripts/jquery.min.js" %>
+	<%= javascript_include_tag "/javascripts/jquery_ujs.js" %>
 </head>
 <body>
   <div class="wrapper">
       <div id="header" class="row">
-        <%= image_tag "/images/wtw.jpg", :id => "header-img" %>
-        <span id="header-text">Improving Communities One Step At A Time</span>
-        <%= render(:partial => "paypal_form") %>
+        <%= image_tag "/images/wtwhorizontal.png", :id => "header-img" %>
+        <%= render(:partial => "site/paypal_form") %>
         <a href="<%= home_path %>"><span id="header-link"></span></a>
       </div>
       <div class="row">

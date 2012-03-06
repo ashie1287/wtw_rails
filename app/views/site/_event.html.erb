@@ -1,0 +1,9 @@
+<div class="event-blurb">
+  <p class="event-title"><%= link_to(event.name, event_path(event)) %></p>
+  <table>
+    <tr>
+      <td><%= image_tag(event.image.url(:thumb), :class => "event-thumb") %></td>
+      <td><%= render(:partial => 'shared/event_table', :locals => {:event => event}) %></td>
+    </tr>
+  </table>
+</div>

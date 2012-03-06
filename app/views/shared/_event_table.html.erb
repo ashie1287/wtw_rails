@@ -1,0 +1,18 @@
+<table class="center-table">
+  <tr>
+    <td class="event-label">Location:</td>
+    <td class="event-attr"><%= event.location.blank? ? "TBD" : event.location %></td>
+  </tr>
+  <tr>
+    <td class="event-label">Start Time:</td>
+    <td class="event-attr"><%= event.start_time.blank? ? "TBD" : event.start_time.strftime("%b %d at %I:%M %p") %></td>
+  </tr>
+  <tr>
+    <td class="event-label">End Time:</td>
+    <td class="event-attr"><%= event.end_time.blank? ? "TBD" : event.end_time.strftime("%b %d at %I:%M %p") %></td>
+  </tr>
+  <tr>
+    <td class="event-label">Duration:</td>
+    <td class="event-attr"><%= duration(event) || "TBD" %></td>
+  </tr>
+</table>

@@ -50,8 +50,8 @@
     <%= f.check_box :allow_signup? %>
   </div>
   <div class="field">
-    <%= f.label :allow_teams? %>
-    <%= f.check_box :allow_teams? %>
+    <%#= f.label :allow_teams? %>
+    <%#= f.check_box :allow_teams? %>
   </div>
   <%= f.label(:description) %>
   <%= f.text_area(:description) %>
@@ -60,7 +60,7 @@
   </div>
 <% end %>
 
-<%= javascript_tag do %>
+<script type="text/javascript">
   $(document).ready(function() {
     $('#event_start_time').AnyTime_picker({ format: "%M %d, %Y %I:%i %p"});
     $('#event_end_time').AnyTime_picker({ format: "%M %d, %Y %I:%i %p"});
@@ -71,4 +71,4 @@
     });
 
   });
-<% end %>
+</script>

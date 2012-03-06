@@ -19,10 +19,6 @@
     margin-bottom: 0em;
   }
 
-  .center-text {
-    text-align: center;
-  }
-
   .page-section {
     margin-left: 1em;
   }
@@ -49,6 +45,37 @@
     font-size: 0.9em;
   }
 
+  .event-img {
+    margin: 1em auto;
+    display: block;
+  }
+
+  .news-blurb, .event-blurb {
+    margin: 0.5em 0em 1em;
+  }
+
+  .event-title {
+    font-size: 0.9em;
+  }
+
+  .news-title {
+    color: #0053A6;
+    font-size: 0.9em;
+    text-decoration: underline;
+  }
+
+  .news-text { 
+    text-indent: 1em;
+    font-size: 0.8em;
+  }
+
+  .news-info {
+    font-style: italic;
+    text-indent: 1.3em;
+    font-size: 0.7em;
+    color: gray;
+  }
+
   .seperator {
     margin: 1.5em 0em;
     border-bottom: 1px lightgray dotted;
@@ -73,13 +100,33 @@
     display:block;
   }
 
-  #contact-table {
+  .center-text {
+    text-align: center;
+  }
+
+  .center-table {
     margin: auto;
   }
 
-  #contact-table td {
-    padding: 0px 5px;
+  .center-table td {
+    padding-left: 5px;
   }
+
+  .event-label {
+    color: #0053A6;
+    font-size: 0.9em;
+    font-style: italic;
+    width: 5em;
+  }
+
+  .event-attr {
+    font-size: 0.8em;
+  }
+
+  .event-detail {
+    font-size: 0.8em;
+    margin: 1em;
+  } 
 
   * {
     margin: 0;
@@ -90,7 +137,7 @@
   }
 
   /* fix for box-sizing above */
-  #fancybox-content, #fancybox-wrap, #fancybox-outer, #fancybox-inner {
+  #fancybox-content, #fancybox-wrap, #fancybox-outer, #fancybox-inner, .AnyTime-win * {
     box-sizing: content-box;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
@@ -122,15 +169,10 @@
   }
 
   #header-img {
-    width: 100px;
-    height: 89px;
+    width: 382px;
+    height: 100px;
+    margin: 0px 30em 0px 5em;
     vertical-align: middle;
-  }
-
-  #header-text {
-    font-size: 2em;
-    font-style: italic;
-    margin: 0px 6em 0px 1em;
   }
 
   #paypal-form {
@@ -197,10 +239,17 @@
     text-align: center;
     border-top: 1px lightgray dotted;
     font-size: 0.8em;
+    margin-top: 1em;
   }
 
   #footer, .push {
     height: 3em;
+  }
+
+  /* admin stuff */
+  .object-table th, .object-table td {
+    text-align: center;
+    padding: 1em 1em;
   }
 
 /* ============================= */

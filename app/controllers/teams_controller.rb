@@ -1,29 +1,27 @@
 class TeamsController < ApplicationController
 
   before_filter :authenticate
+  before_filter do
+    @event = Event.find(params[:event_id])
+  end
 
   def index
-    @event = Event.find(params[:event_id])
     @teams = @event.teams
   end
 
   def show
-    @event = Event.find(params[:event_id])
     @team = @event.teams.find(params[:id])
   end
 
   def new
-    @event = Event.find(params[:event_id])
     @team = @event.teams.build
   end
 
   def edit
-    @event = Event.find(params[:event_id])
     @team = @event.teams.find(params[:id])
   end
 
   def create
-    @event = Event.find(params[:event_id])
     @team = @event.teams.build
 
     if @team.save
@@ -34,7 +32,6 @@ class TeamsController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:event_id])
     @team = @event.teams.find(params[:id])
 
     if @team.update_attributes(params[:team])
@@ -45,7 +42,6 @@ class TeamsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:event_id])
     @team = @event.teams.find(params[:id])
     @team.destroy
 

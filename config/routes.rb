@@ -4,10 +4,10 @@ WalkTheWalk::Application.routes.draw do
     member do
       get  'users'
       post 'remove_image'
-      get  'signup'
+      #get  'signup'
       post 'register'
     end
-    resources :teams
+    #resources :teams
   end
   resources :users
   resources :site, :only => :show
