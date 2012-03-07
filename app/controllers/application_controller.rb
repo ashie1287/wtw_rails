@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def recent_events
-    @events = Event.order('created_at').limit(5).reverse_order
+    @events = Event.where(["end_time >= ?", Time.zone.now.to_s(:db)]).order('created_at').limit(5).reverse_order
   end
 
   def recent_articles
