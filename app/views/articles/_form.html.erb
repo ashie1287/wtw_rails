@@ -1,0 +1,39 @@
+<%= javascript_include_tag '/ckeditor/ckeditor' %>
+<%= javascript_include_tag '/ckeditor/adapters/jquery' %>
+
+<% if @article.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+    <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for(@article) do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+  <%= f.label(:body) %>
+  <%= f.text_area(:body) %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#article_body').ckeditor({
+      tabSpaces: 5
+    });
+
+  });
+</script>

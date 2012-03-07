@@ -1,10 +1,5 @@
 <div class="page container">
   <div class="row">
-    <div class="twelvecol last">
-        <p class="page-title center-text"><%= @event.name %></p>
-     </div>
-  </div>
-  <div class="row">
     <div class="fourcol">
       <div class="page-section">
         <%= image_tag(@event.image.url, :class => "event-img") %>
@@ -13,7 +8,8 @@
     </div>
     <div class="eightcol last">
       <div class="page-section">
-        <div class="event-detail">
+        <p class="page-title"><%= @event.name %></p>
+        <div class="page-body">
           <%= raw(@event.description) %>
         </div>
       </div>

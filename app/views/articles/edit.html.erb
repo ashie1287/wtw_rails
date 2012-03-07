@@ -1,10 +1,12 @@
 <div class="page container">
   <div class="row">
     <div class="twelvecol last">
-      <p class="page-title">New event</p>
       <div class="page-section">
+        <p class="page-title">Editing Article</p>
         <%= render 'form' %>
-        <%= link_to 'Back', events_path %>
+
+        <%= link_to 'Show', article_path(@article) %> |
+        <%= link_to 'Back', articles_path %>
       </div>
     </div>
   </div>

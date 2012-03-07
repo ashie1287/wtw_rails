@@ -1,5 +1,6 @@
 WalkTheWalk::Application.routes.draw do
 
+  resources :articles
   resources :events do
     member do
       get  'users'

@@ -50,7 +50,7 @@
     display: block;
   }
 
-  .news-blurb, .event-blurb {
+  .article-blurb, .event-blurb {
     margin: 0.5em 0em 1em;
   }
 
@@ -58,22 +58,27 @@
     font-size: 0.9em;
   }
 
-  .news-title {
+  .article-title {
     color: #0053A6;
     font-size: 0.9em;
     text-decoration: underline;
   }
 
-  .news-text { 
+  .article-excerpt { 
     text-indent: 1em;
     font-size: 0.8em;
   }
 
-  .news-info {
+  .article-info {
     font-style: italic;
+    text-indent: 0.9em;
+    font-size: 0.9em;
+    color: gray;
+  }
+
+  .article-subinfo {
     text-indent: 1.3em;
     font-size: 0.7em;
-    color: gray;
   }
 
   .seperator {
@@ -123,7 +128,7 @@
     font-size: 0.8em;
   }
 
-  .event-detail {
+  .page-body {
     font-size: 0.8em;
     margin: 1em;
   } 
@@ -231,7 +236,7 @@
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -3em;
+    margin: 0 auto -3.15em;
     background-color: #F9F9F9;
   }
 
@@ -243,13 +248,23 @@
   }
 
   #footer, .push {
-    height: 3em;
+    height: 3em    
   }
 
   /* admin stuff */
   .object-table th, .object-table td {
     text-align: center;
     padding: 1em 1em;
+  }
+
+  .notice {
+    text-align: center;
+    color: green;
+  }
+
+  #error_explanation {
+    text-align: center;
+    color: red;
   }
 
 /* ============================= */

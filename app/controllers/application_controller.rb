@@ -18,4 +18,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def recent_events
+    @events = Event.order('created_at').limit(5).reverse_order
+  end
+
+  def recent_articles
+    @articles = Article.order('created_at').limit(5).reverse_order
+  end
 end

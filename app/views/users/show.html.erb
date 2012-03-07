@@ -1,13 +1,19 @@
-<div class='spaced-blurb rounded-blurb'>
-  <h1>User details</h1>
-  <table class='event-table auto-margin'>
-    <tr>
-      <td class='event-label'>Name:</td>
-      <td class='event-attr'><%= @user.name %></td>
-    </tr>
-    <tr>
-      <td class='event-label'>Email:</td>
-      <td class='event-attr'><%= @user.email %></td>
-    </tr>
-  </table>
+<div class="page container">
+  <div class="row">
+    <div class="twelvecol last">
+      <p class="page-title">User Details</p>
+      <div class="page-section">
+        <table class='object-table center-table'>
+          <tr>
+            <td>Name:</td>
+            <td><%= @user.name %></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td><%= @user.email %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

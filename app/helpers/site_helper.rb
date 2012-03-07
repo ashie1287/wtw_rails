@@ -22,28 +22,15 @@ module SiteHelper
                        :rel => image_dir.join('_')})
   end
 
-  def render_last_events
-    render('site/events')
-  end
-
   def duration(event)
     if !event.start_time.blank? && !event.end_time.blank?
       distance_of_time_in_words(event.start_time, event.end_time)
     end
   end
 
-  def event_links(event)
-    links = []
-    links << link_to('Details', event_path(event))
-    if event.allow_signup? && (event.start_time.blank? || event.start_time > Time.zone.now)
-      links << link_to('Sign Up!', signup_event_path(event))
-    end
-    links.join(' | ')
-  end
-
-  def render_flash
+  def render_notice
     unless notice.blank?
-      render('site/flash')
+      render(:partial => 'shared/notice', :locals => {:notice => notice})
     end
   end
 
@@ -54,5 +41,16 @@ module SiteHelper
       img = [src, image].join('/')
       image_tag(img)
     }.join.html_safe
+  end
+
+  def article_excerpt(article, length = 200)
+    text = strip_tags(article.body).gsub(/&nbsp;/i,"")
+    text = truncate(text, :length => length, :seperator => ' ', :omission => '')
+    link = link_to('[...]', article_path(article))
+    raw("#{text} #{link}")
+  end
+
+  def article_info(article)
+    "By #{article.author} on #{article.created_at.strftime('%b %d at %I:%M %p')}"
   end
 end

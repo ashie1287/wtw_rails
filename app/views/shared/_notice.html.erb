@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="twelvecol last">
+    <% if notice.is_a?(Array) %>
+      <% notice.each do |msg| %>
+        <p class="notice"><%= msg %></p>
+      <% end %>
+    <% else %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+  </div>
+</div>

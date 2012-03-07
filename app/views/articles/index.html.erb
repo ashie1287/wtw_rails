@@ -1,0 +1,31 @@
+<div class="page container">
+  <div class="row">
+    <div class="twelvecol last">
+      <p class="page-title">Listing Articles</p>
+      <div class="page-section">
+        <table class="object-table center-table">
+          <tr>
+            <th>Title</th>
+            <th>Info</th>
+            <th>Excerpt</th>
+            <th>Actions</th>
+          </tr>
+
+        <% @articles.each do |article| %>
+          <tr>
+            <td><%= article.title %></td>
+            <td><%= article_info(article) %></td>
+            <td><%= article_excerpt(article) %></td>
+            <td>
+              <%= button_to 'Show', article_path(article), :method => :get %>
+              <%= button_to 'Edit', edit_article_path(article), :method => :get %>
+              <%= button_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %>
+            </td>
+          </tr>
+        <% end %>
+        </table>
+      </div>
+      <%= link_to 'New Article', new_article_path %>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,9 @@
 class SiteController < ApplicationController
+
+  before_filter :recent_events, :only => :index
+  before_filter :recent_articles, :only => :index
+
   def index
-    @events = Event.order('created_at').limit(5).reverse_order
   end
 
   def show

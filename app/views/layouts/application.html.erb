@@ -23,16 +23,17 @@
 </head>
 <body>
   <div class="wrapper">
-      <div id="header" class="row">
-        <%= image_tag "/images/wtwhorizontal.png", :id => "header-img" %>
-        <%= render(:partial => "site/paypal_form") %>
-        <a href="<%= home_path %>"><span id="header-link"></span></a>
+    <div id="header" class="row">
+      <%= image_tag "/images/wtwhorizontal.png", :id => "header-img" %>
+      <%= render(:partial => "site/paypal_form") %>
+      <a href="<%= home_path %>"><span id="header-link"></span></a>
+    </div>
+    <div class="row">
+      <div id="menu">
+        <%= render_menu %>
       </div>
-      <div class="row">
-        <div id="menu">
-          <%= render_menu %>
-        </div>
-      </div>
+    </div>
+    <%= render_notice %>
     <%= yield %>
     <div class="push"></div>
   </div>

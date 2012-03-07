@@ -1,0 +1,18 @@
+<div class="page container">
+  <div class="row">
+    <div class="eightcol">
+      <div class="page-section">
+        <p class="page-title"><%= @article.title %></p>
+        <p class="article-info"><%= article_info(@article) %></p>
+        <div class="page-body">
+          <%= raw(@article.body) %>
+        </div>
+      </div>
+    </div>
+    <div class="fourcol last">
+      <%= render(:partial => 'shared/articles') %>
+      <br />
+      <%= render(:partial => 'shared/events') %>
+    </div>
+  </div>
+</div>

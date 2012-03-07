@@ -1,8 +1,11 @@
-<div class='spaced-blurb rounded-blurb'>
-
-<h1>New team</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', event_teams_path(@event) %>
+<div class="page container">
+  <div class="row">
+    <div class="twelvecol last">
+      <p class="page-title">New team</p>
+      <div class="page-section">
+        <%= render 'form' %>
+        <%= link_to 'Back', event_teams_path(@event) %>
+      </div>
+    </div>
+  </div>
 </div>
