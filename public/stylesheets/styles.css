@@ -180,12 +180,16 @@
     vertical-align: middle;
   }
 
-  #paypal-form {
+  .paypal-img {
     position:relative;
     text-align: right;
     display: inline-block;
     vertical-align: middle;
     z-index: 2;
+  }
+
+  #paypal-modal {
+    width: 300px;
   }
 
   #header-link {
