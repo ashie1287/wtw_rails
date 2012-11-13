@@ -2,213 +2,221 @@
 /* ! Layout for desktop version   */
 /* ============================== */
 
-  .slider-row {
+.slider-row {
     background-color: lightgray;
     border-radius: 10px;
     -moz-box-shadow: 10px 10px 5px #888;
     -webkit-box-shadow: 10px 10px 5px #888;
     -safari-box-shadow: 10px 10px 5px #888;
     box-shadow: 1px 1px 5px #888;
-  }
+}
 
-  .slider-wrapper {
+.slider-wrapper {
     margin-right: 0em;
-  }
+}
 
-  .slider-wrapper #slider {
+.slider-wrapper #slider {
     margin-bottom: 0em;
-  }
+}
 
-  .page-section {
+.page-section {
     margin-left: 1em;
-  }
+}
 
-  .page {
+.page {
     margin-top: 1.5em;
-  }
+}
 
-  .page-title {
+.page-title {
     border-bottom: 3px #BBB solid;
     font-size: 1.8em;
     color: #666673;
-  }
+}
 
-  .page-subtitle {
+.page-subtitle {
     border-bottom: 2px #BBB solid;
     font-size: 1.4em;
     color: #666673;
-  }
+}
 
-  .page-text {
+.page-text {
     margin: 1em;
     text-indent: 1em;
     font-size: 0.9em;
-  }
+}
 
-  .event-img {
+.event-img {
     margin: 1em auto;
     display: block;
-  }
+}
 
-  .article-blurb, .event-blurb {
+.article-blurb, .event-blurb {
     margin: 0.5em 0em 1em;
-  }
+    position: relative;
+}
 
-  .event-title {
-    font-size: 0.9em;
-  }
+span.div-link {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
 
-  .article-title {
+    /* edit: added z-index */
+    z-index: 1;
+}
+
+.article-title, .event-title {
     color: #0053A6;
     font-size: 0.9em;
     text-decoration: underline;
-  }
+}
 
-  .article-excerpt { 
+.article-excerpt {
     text-indent: 1em;
     font-size: 0.8em;
-  }
+}
 
-  .article-info {
+.article-info {
     font-style: italic;
     text-indent: 0.9em;
     font-size: 0.9em;
     color: gray;
-  }
+}
 
-  .article-subinfo {
+.article-subinfo {
     text-indent: 1.3em;
     font-size: 0.7em;
-  }
+}
 
-  .seperator {
+.seperator {
     margin: 1.5em 0em;
     border-bottom: 1px lightgray dotted;
-  }
+}
 
-  .nivoSlider {
-    position:relative;
-    width:484px;
-    height:359px;
+.nivoSlider {
+    position: relative;
+    width: 484px;
+    height: 359px;
     background: url(/nivo-slider/themes/default/loading.gif) no-repeat 50% 50%;
- }
+}
 
-  .nivoSlider > img {
-    position:absolute;
-    top:0px;
-    left:0px;
-    display:none;
-  }
+.nivoSlider > img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
 
-  .nivoSlider a {
-    border:0;
-    display:block;
-  }
+.nivoSlider a {
+    border: 0;
+    display: block;
+}
 
-  .center-text {
+.center-text {
     text-align: center;
-  }
+}
 
-  .center-table {
+.center-table {
     margin: auto;
-  }
+}
 
-  .center-table td {
+.center-table td {
     padding-left: 5px;
-  }
+}
 
-  .event-label {
+.event-label {
     color: #0053A6;
     font-size: 0.9em;
     font-style: italic;
     width: 5em;
-  }
+}
 
-  .event-attr {
+.event-attr {
     font-size: 0.8em;
-  }
+}
 
-  .page-body {
+.page-body {
     font-size: 0.8em;
     margin: 1em;
-  } 
+}
 
-  * {
+* {
     margin: 0;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -safari-box-sizing: border-box;
-  }
+}
 
-  /* fix for box-sizing above */
-  #fancybox-content, #fancybox-wrap, #fancybox-outer, #fancybox-inner, .AnyTime-win * {
+/* fix for box-sizing above */
+#fancybox-content, #fancybox-wrap, #fancybox-outer, #fancybox-inner, .AnyTime-win * {
     box-sizing: content-box;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
     -safari-box-sizing: content-box;
-  }
+}
 
-  html {
-      height: 100%;
-  }
+html {
+    height: 100%;
+}
 
-	body {
+body {
     background: #a0a0a0; /* Old browsers */
-    background: -moz-linear-gradient(top,  #a0a0a0 0%, #f9f9f9 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a0a0a0), color-stop(100%,#f9f9f9)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #a0a0a0 0%,#f9f9f9 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #a0a0a0 0%,#f9f9f9 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #a0a0a0 0%,#f9f9f9 100%); /* IE10+ */
-    background: linear-gradient(top,  #a0a0a0 0%,#f9f9f9 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0a0a0', endColorstr='#f9f9f9',GradientType=0 ); /* IE6-9 */
+    background: -moz-linear-gradient(top, #a0a0a0 0%, #f9f9f9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a0a0a0), color-stop(100%, #f9f9f9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #a0a0a0 0%, #f9f9f9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #a0a0a0 0%, #f9f9f9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #a0a0a0 0%, #f9f9f9 100%); /* IE10+ */
+    background: linear-gradient(top, #a0a0a0 0%, #f9f9f9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#a0a0a0', endColorstr = '#f9f9f9', GradientType = 0); /* IE6-9 */
 
     height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: "Arial", Helvetica, sans-serif;
-	}
+}
 
-  #header {
-    position:relative;
-  }
+#header {
+    position: relative;
+}
 
-  #header-img {
+#header-img {
     width: 382px;
     height: 100px;
     margin: 0px 30em 0px 5em;
     vertical-align: middle;
-  }
+}
 
-  .paypal-img {
-    position:relative;
+.paypal-img {
+    position: relative;
     text-align: right;
     display: inline-block;
     vertical-align: middle;
     z-index: 2;
-  }
+}
 
-  #paypal-modal {
+#paypal-modal {
     width: 300px;
-  }
+}
 
-  #header-link {
-    position:absolute; 
-    width:100%;
-    height:100%;
-    top:0;
+#header-link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
     left: 0;
     z-index: 1;
-  }
+}
 
-  #menu ul {
-    padding:0; 
-    margin:0; 
+#menu ul {
+    padding: 0;
+    margin: 0;
     list-style-type: none;
-  }
+}
 
-  #menu ul li {
-    float: left; 
+#menu ul li {
+    float: left;
     padding-right: 0px;
     padding-left: 0px;
     width: 16.6667%;
@@ -217,59 +225,59 @@
     border-top: 0.1em #BBB solid;
     border-bottom: 0.1em #BBB solid;
     border-left: 0.1em #BBB solid;
-  }
+}
 
-  #menu ul li:first-child {
+#menu ul li:first-child {
     border-left: 0px;
-  }
+}
 
-  #menu ul li a {
+#menu ul li a {
     display: block;
     text-decoration: none;
     outline: none;
     background-color: #808080;
     color: #FFF;
-  }
+}
 
-  #menu ul li a:hover {
+#menu ul li a:hover {
     background-color: #5290E3;
-  }
+}
 
-  .wrapper {
+.wrapper {
     width: 1140px;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin: 0 auto -3.15em;
     background-color: #F9F9F9;
-  }
+}
 
-  #footer {
+#footer {
     text-align: center;
     border-top: 1px lightgray dotted;
     font-size: 0.8em;
     margin-top: 1em;
-  }
+}
 
-  #footer, .push {
-    height: 3em    
-  }
+#footer, .push {
+    height: 3em
+}
 
-  /* admin stuff */
-  .object-table th, .object-table td {
+/* admin stuff */
+.object-table th, .object-table td {
     text-align: center;
     padding: 1em 1em;
-  }
+}
 
-  .notice {
+.notice {
     text-align: center;
     color: green;
-  }
+}
 
-  #error_explanation {
+#error_explanation {
     text-align: center;
     color: red;
-  }
+}
 
 /* ============================= */
 /* ! Layout for mobile version   */
@@ -277,22 +285,21 @@
 
 @media handheld, only screen and (max-width: 767px) {
 
-	body {
-		
-	}
+    body {
+
+    }
 
 }
-
 
 /* ========================================== */
 /* ! Provide higher res assets for iPhone 4   */
 /* ========================================== */
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
 
-/*	.logo {
-		background: url(logo2x.jpg) no-repeat;
-		background-size: 212px 303px;
-	}*/
+    /*	.logo {
+         background: url(logo2x.jpg) no-repeat;
+         background-size: 212px 303px;
+     }*/
 
 }

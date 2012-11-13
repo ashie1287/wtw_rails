@@ -45,12 +45,10 @@ module SiteHelper
 
   def article_excerpt(article, length = 200)
     text = strip_tags(article.body).gsub(/&nbsp;/i,"")
-    text = truncate(text, :length => length, :seperator => ' ', :omission => '')
-    link = link_to('[...]', article_path(article))
-    raw("#{text} #{link}")
+    truncate(text, :length => length, :separator => ' ', :omission => '...')
   end
 
   def article_info(article)
-    "By #{article.author} on #{article.created_at.strftime('%b %d at %I:%M %p')}"
+    "#{article.created_at.strftime('%B %d, %Y')}"
   end
 end
