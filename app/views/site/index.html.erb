@@ -1,38 +1,16 @@
 <div class="page container">
   <div class="slider-row row">
-    <div class="slider-wrapper theme-default sixcol">
-      <div id="slider" class="nivoSlider">
-        <%#= image_tag("/images/front/1.jpg", :title => "Thanksgiving 2011") %>
-        <%#= image_tag("/images/front/2.jpg", :title => "Casino Day 2010") %>
-        <%#= image_tag("/images/front/3.jpg", :title => "Thanksgiving 2011") %>
-        <%#= image_tag("/images/front/4.jpg", :title => "Casino Day 2010") %>
-        <%= image_tag("/images/front/1.jpg") %>
-        <%= image_tag("/images/front/2.jpg") %>
-        <%= image_tag("/images/front/3.jpg") %>
-        <%= image_tag("/images/front/4.jpg") %>
-      </div>
-    </div>
-
-    <!-- nivo slider -->
-    <%= stylesheet_link_tag "/nivo-slider/themes/default/default" %>
-    <%= stylesheet_link_tag "/nivo-slider/nivo-slider" %>
-    <%= javascript_include_tag "/nivo-slider/jquery.nivo.slider.pack.js" %>
-
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('#slider').nivoSlider({
-          pauseTime: '5000',
-          controlNav: false
-        });
-    });
-    </script>
-
-    <div class="sixcol last">
-      <p class="page-title center-text">Welcome!</p>
-      <p class="page-text">Walk The Walk is a non profit organization that pursues various charitable endeavors throughout the New Jersey area.  All of our proceeds go directly to local charities or Walk The Walk organized charitable events.  Our goal is to raise money and organize social events that help local New Jersey communities.</p>
-    </div>
+    <%=
+        render(:partial => 'shared/slider', :locals => {:slider => {
+                :id => "main-slider",
+                :images => %w(/images/front/1.jpg /images/front/2.jpg /images/front/3.jpg /images/front/4.jpg),
+                :title => "Welcome!",
+                :text => "Walk The Walk is a non profit organization that pursues various charitable endeavors throughout the New Jersey area.  All of our proceeds go directly to local charities or Walk The Walk organized charitable events.  Our goal is to raise money and organize social events that help local New Jersey communities.",
+                :options => {'pauseTime' => '5000', 'controlNav' => false}
+        }})
+    %>
   </div>
-  <div class="seperator"></div>
+  <div class="separator"></div>
   <div class="row">
     <div class="fourcol">
       <%= render(:partial => 'shared/articles') %>

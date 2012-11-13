@@ -15,7 +15,7 @@
     margin-right: 0em;
 }
 
-.slider-wrapper #slider {
+div.slider-wrapper div.slider {
     margin-bottom: 0em;
 }
 
@@ -55,11 +55,11 @@
     position: relative;
 }
 
-span.div-link {
-    position:absolute;
-    width:100%;
-    height:100%;
-    top:0;
+a.div-link span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
     left: 0;
 
     /* edit: added z-index */
@@ -89,9 +89,14 @@ span.div-link {
     font-size: 0.7em;
 }
 
-.seperator {
+.separator {
     margin: 1.5em 0em;
     border-bottom: 1px lightgray dotted;
+}
+
+div.theme-default div.nivo-controlNav {
+    position: relative;
+    top: 0;
 }
 
 .nivoSlider {

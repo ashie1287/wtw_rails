@@ -1,0 +1,25 @@
+<div class="slider-wrapper theme-default sixcol">
+  <div id="<%= slider[:id] %>" class="slider nivoSlider">
+    <% slider[:images].each do |image| %>
+        <%= image_tag(image, 'data-thumb' => image) %>
+    <% end %>
+  </div>
+</div>
+
+<!-- nivo slider -->
+<%= stylesheet_link_tag "/nivo-slider/themes/default/default" %>
+<%= stylesheet_link_tag "/nivo-slider/nivo-slider" %>
+<%= javascript_include_tag "/nivo-slider/jquery.nivo.slider.pack.js" %>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var options = <%= raw(slider[:options].to_json) %>;
+        $('#<%= slider[:id] %>').nivoSlider(options);
+    });
+</script>
+
+<div class="sixcol last">
+  <p class="page-title center-text"><%= slider[:title] %></p>
+
+  <p class="page-text"><%= slider[:text] %></p>
+</div>
