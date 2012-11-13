@@ -24,7 +24,8 @@ module SiteHelper
 
   def images_for(image_dir)
     Dir.entries(File.join('public', 'images', *image_dir)).grep(IMAGE_REGEX).map {|filename|
-      File.join(*image_dir, filename)
+      temp = File.join(*image_dir)
+      File.join(temp, filename)
     }
   end
 
@@ -42,7 +43,7 @@ module SiteHelper
 
   def article_excerpt(article, length = 200)
     text = strip_tags(article.body).gsub(/&nbsp;/i,"")
-    truncate(text, :length => length, :separator => ' ', :omission => '...')
+    raw(truncate(text, :length => length, :separator => ' ', :omission => '...'))
   end
 
   def article_info(article)
