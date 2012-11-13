@@ -1,7 +1,7 @@
 <div class="slider-wrapper theme-default sixcol">
   <div id="<%= slider[:id] %>" class="slider nivoSlider">
     <% slider[:images].each do |image| %>
-        <%= image_tag(image, 'data-thumb' => image) %>
+        <%= image_tag(image, 'data-thumb' => image_path(image)) %>
     <% end %>
   </div>
 </div>
@@ -17,9 +17,3 @@
         $('#<%= slider[:id] %>').nivoSlider(options);
     });
 </script>
-
-<div class="sixcol last">
-  <p class="page-title center-text"><%= slider[:title] %></p>
-
-  <p class="page-text"><%= slider[:text] %></p>
-</div>
