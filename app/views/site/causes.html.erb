@@ -2,16 +2,39 @@
   <div class="row">
     <%=
         render(:partial => 'shared/slider', :locals => {:slider => {
-                :id => "thanksgiving-slider",
-                :images => images_for(%W(seniors thanksgiving)),
+                :id => "thanksgiving-2011-slider",
+                :images => images_for(%W(seniors thanksgiving-2011)),
                 :options => {'pauseTime' => '5000', 'controlNav' => true, 'controlNavThumbs' => true}
         }})
     %>
     <div class="sixcol last">
-      <p class="page-title center-text">Thanksgiving Dinners</p>
+      <p class="page-title center-text">2011 Hoboken Thanksgiving Dinner</p>
 
       <p class="page-text">Walk The Walk has been providing home-cooked holiday meals to shut-in and needy senior
         citizens in areas including Howell Township, Hoboken, and New Brunswick.</p>
+
+      <div class="page-section">
+        <p class="page-subtitle">Articles</p>
+        <%= link_to("Walk the Walk Foundation founders deliver Thanksgiving to Hoboken seniors", 'http://www.nj.com/jjournal-news/index.ssf/2011/11/walk_the_walk_foundation_found.html', :target => '_blank'); %>
+        <br/>
+        <%= link_to("Walk the Walk foundation makes Thanksgiving meals for shut-in seniors in Hoboken", 'http://www.nj.com/hobokennow/index.ssf/2011/11/walk_the_walk_foundation_makes.html', :target => '_blank'); %>
+        <br/>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <div class="row">
+    <%=
+        render(:partial => 'shared/slider', :locals => {:slider => {
+                :id => "thanksgiving-2010-slider",
+                :images => images_for(%W(seniors thanksgiving-2010)),
+                :options => {'pauseTime' => '5000', 'controlNav' => true, 'controlNavThumbs' => true}
+        }})
+    %>
+    <div class="sixcol last">
+      <p class="page-title center-text">2010 Hoboken Thanksgiving Dinner</p>
+
+      <p class="page-text"></p>
 
       <div class="page-section">
         <p class="page-subtitle">Articles</p>
@@ -19,6 +42,25 @@
         <br/>
         <%= link_to("Hoboken gives back: local charity brings Thanksgiving to 80 shut-in seniors", 'http://www.nj.com/hobokennow/index.ssf/2010/11/hoboken_gives_back_local_chari.html', :target => '_blank'); %>
         <br/>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <div class="row">
+    <%=
+        render(:partial => 'shared/slider', :locals => {:slider => {
+                :id => "thanksgiving-2009-slider",
+                :images => images_for(%W(seniors thanksgiving-2009)),
+                :options => {'pauseTime' => '5000', 'directionNav' => false, 'controlNav' => false, 'controlNavThumbs' => false}
+        }})
+    %>
+    <div class="sixcol last">
+      <p class="page-title center-text">2009 Hoboken Thanksgiving Dinner</p>
+
+      <p class="page-text"></p>
+
+      <div class="page-section">
+        <p class="page-subtitle">Articles</p>
         <%= link_to("Want to give something back? Deliver Thanksgiving meals to Hoboken's senior citizens", 'http://www.nj.com/hobokennow/index.ssf/2009/11/want_to_give_something_back_de.html', :target => '_blank'); %>
         <br/>
         <%= link_to("Home-bound Hoboken senior citizens get Thanksgiving dinner brought to them", 'http://www.nj.com/hobokennow/index.ssf/2009/11/home-bound_hoboken_senior_citi.html', :target => '_blank'); %>
@@ -32,13 +74,13 @@
   <div class="row">
     <%=
         render(:partial => 'shared/slider', :locals => {:slider => {
-                :id => "casino-slider",
-                :images => images_for(%W(seniors casino)),
+                :id => "casino-2009-slider",
+                :images => images_for(%W(seniors casino-2009)),
                 :options => {'pauseTime' => '5000', 'controlNav' => true, 'controlNavThumbs' => true}
         }})
     %>
     <div class="sixcol last">
-      <p class="page-title center-text">Casino Day</p>
+      <p class="page-title center-text">2009 Casino Day</p>
 
       <p class="page-text">In an effort to promote socialization among seniors, Walk The Walk organized an event which
         arranged casino games such as table poker, roulette, craps and bingo. The event was a huge success and provided
