@@ -1,6 +1,22 @@
 <div class="page container">
   <div class="row">
     <%=
+      render(:partial => 'shared/slider', :locals => {:slider => {
+          :id => "thanksgiving-2017-slider",
+          :images => images_for(%W(seniors thanksgiving-2017)),
+          :options => {'pauseTime' => '5000', 'controlNav' => true, 'controlNavThumbs' => true}
+      }})
+    %>
+    <div class="sixcol last">
+      <p class="page-title center-text">Hoboken Thanksgiving Dinner</p>
+
+      <p class="page-text">Walk The Walk has been providing home-cooked holiday meals to shut-in and needy senior
+        citizens in areas including Howell Township, Hoboken, and New Brunswick.</p>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <div class="row">
+    <%=
         render(:partial => 'shared/slider', :locals => {:slider => {
                 :id => "thanksgiving-2011-slider",
                 :images => images_for(%W(seniors thanksgiving-2011)),
@@ -10,8 +26,7 @@
     <div class="sixcol last">
       <p class="page-title center-text">2011 Hoboken Thanksgiving Dinner</p>
 
-      <p class="page-text">Walk The Walk has been providing home-cooked holiday meals to shut-in and needy senior
-        citizens in areas including Howell Township, Hoboken, and New Brunswick.</p>
+      <p class="page-text"></p>
 
       <div class="page-section">
         <p class="page-subtitle">Articles</p>

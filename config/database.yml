@@ -1,5 +1,5 @@
 defaults: &defaults
-  adapter: mysql
+  adapter: mysql2
   username: walk_the_walk
   password: 'Hello!23'
   host: localhost
