@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
   def authenticate
     valid_creds = {
       'russ'   => 'Hello!23',
-      'hannon' => 'Hello!23'
+      'hannon' => 'Hello!23',
+      'lisa' => 'Hello!23'
     }
 
     authenticate_or_request_with_http_basic do |user, pass|
