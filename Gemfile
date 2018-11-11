@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.0.9'
 
@@ -7,8 +7,7 @@ gem 'rails', '3.0.9'
 
 gem 'rake'
 
-gem 'mysql'
-
+gem 'activerecord-mysql2-adapter'
 gem 'paperclip'
 
 gem 'jquery-rails'
