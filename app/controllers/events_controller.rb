@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
-  before_filter :authenticate, :except => [:show, :signup, :register]
-  before_filter :event_must_have_signup_ability, :only => [:signup, :register]
+  before_action :authenticate, :except => [:show, :signup, :register]
+  before_action :event_must_have_signup_ability, :only => [:signup, :register]
 
   def users
     @event = Event.find(params[:id])

@@ -1,7 +1,7 @@
 class SiteController < ApplicationController
 
-  before_filter :recent_events, :only => :index
-  before_filter :recent_articles, :only => :index
+  before_action :recent_events, :only => :index
+  before_action :recent_articles, :only => :index
 
   def index
   end

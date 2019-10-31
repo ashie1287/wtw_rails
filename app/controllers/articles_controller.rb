@@ -1,9 +1,9 @@
 class ArticlesController < ApplicationController
   
-  before_filter :authenticate, :except => :show
+  before_action :authenticate, :except => :show
 
-  before_filter :recent_events, :only => :show
-  before_filter :recent_articles, :only => :show
+  before_action :recent_events, :only => :show
+  before_action :recent_articles, :only => :show
 
   def index
     @articles = Article.all

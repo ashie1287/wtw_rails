@@ -26,7 +26,7 @@ module SiteHelper
   def images_for(image_dir)
     Dir.entries(File.join('public', 'images', *image_dir)).grep(IMAGE_REGEX).map {|filename|
       temp = File.join(*image_dir)
-      File.join(temp, filename)
+      File.join('/images', temp, filename)
     }
   end
 

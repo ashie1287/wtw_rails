@@ -1,48 +1,51 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <%= csrf_meta_tag %>
-  <%= favicon_link_tag %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   <title>Walk The Walk</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<!-- 1140px Grid styles for IE -->
-	<!--[if lte IE 9]><%= stylesheet_link_tag "/stylesheets/ie" %><![endif]-->
+  <!-- 1140px Grid styles for IE -->
+  <!--[if lte IE 9]><%= stylesheet_link_tag "/stylesheets/ie" %><![endif]-->
 
-	<!-- The 1140px Grid - http://cssgrid.net/ -->
-	<%= stylesheet_link_tag "/stylesheets/1140" %>
-	
-	<!-- Your styles -->
-	<%= stylesheet_link_tag "/stylesheets/styles" %>
-	
-	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
-	<%= javascript_include_tag "/javascripts/css3-mediaqueries" %>
-	<%= javascript_include_tag "/javascripts/jquery.min.js" %>
-	<%= javascript_include_tag "/javascripts/jquery_ujs.js" %>
+  <!-- The 1140px Grid - http://cssgrid.net/ -->
+  <%= stylesheet_link_tag "/stylesheets/1140" %>
+
+  <!-- Your styles -->
+  <%= stylesheet_link_tag "/stylesheets/styles" %>
+
+  <!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
+  <%= javascript_include_tag "/javascripts/css3-mediaqueries" %>
+  <%= javascript_include_tag "/javascripts/jquery.min.js" %>
+  <%= javascript_include_tag "/javascripts/jquery_ujs.js" %>
 </head>
 <body>
-  <div class="wrapper">
-    <div id="header" class="row">
-      <%= image_tag "/images/wtwhorizontal.png", :id => "header-img" %>
-      <%= render(:partial => "site/paypal_form") %>
-      <a href="<%= home_path %>"><span id="header-link"></span></a>
-    </div>
-    <div class="row">
-      <div id="menu">
-        <%= render_menu %>
-      </div>
-    </div>
-    <%= render_notice %>
-    <%= yield %>
-    <div class="push"></div>
+<div class="wrapper">
+  <div id="header" class="row">
+    <%= image_tag "/images/wtwhorizontal.png", :id => "header-img" %>
+    <%= render(:partial => "site/paypal_form") %>
+    <a href="<%= home_path %>"><span id="header-link"></span></a>
   </div>
-  <div class="container">
-    <div id="footer" class="row">
-      <span>Copyright Walk The Walk &copy; <%= Time.zone.now.year %></span>
-      <br />
-      <span>All Rights Reserved.</span>
+  <div class="row">
+    <div id="menu">
+      <%= render_menu %>
     </div>
   </div>
+  <%= render_notice %>
+  <%= yield %>
+  <div class="push"></div>
+</div>
+<div class="container">
+  <div id="footer" class="row">
+    <span>Copyright Walk The Walk &copy; <%= Time.zone.now.year %></span>
+    <br/>
+    <span>All Rights Reserved.</span>
+  </div>
+</div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
 
-  before_filter :authenticate
-  before_filter do
+  before_action :authenticate
+  before_action do
     @event = Event.find(params[:event_id])
   end
 
